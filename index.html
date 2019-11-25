@@ -2,51 +2,42 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Evergreen Online</title>
-	<link href="/images/LogoSm.png" rel="icon" type="image/png" />
+	<title>Evergreen Garden Center</title>
+	<link href="/images/favicon.png" rel="icon" type="image/png" />
 	
 	<!-- CSS Stylesheets -->
 	<link href="css/main.css" rel="stylesheet" media="all" />
 </head>
 
-<body>
-	<!-- Navigation Menu -->
-	<div id="navBar">
-		<a href=""><img id="navLogo" src="images/WhiteLogo.png" alt="Evergreen.png"></a>
-		<li><a href="">Contact Us</a></li>
-		<li><a href="">Social Media</a></li>
-		<li><a href="">Newsletter</a></li>
-		<li><a href="">About Us</a></li>
+<body style="background-color: black">
+	<div style="overflow: hidden; width: 100%; height: 100%;">
+	<video id="bg-video" muted autoplay onEnded="switchVideo();">
+		<source id="webmSource" src="videos/banner1.webm" type="video/webm">
+		<source id="mp4Source" src="videos/banner1.mp4" type="video/mp4">
+	</video>
 	</div>
 	
-	<!-- Hide the navigation menu while the banner is offscreen -->
 	<script>
-		window.onscroll = function() {
-			var elementTarget = document.getElementById("banner");
-			if (window.scrollY > (elementTarget.offsetTop + elementTarget.offsetHeight)) {
-				document.getElementById("navBar").style.top = "0";
-				}
-			else {
-				document.getElementById("navBar").style.top = "-80px";
-			}
+		video_count = 1;
+		video = document.getElementById("bg-video");
+		
+		function switchVideo() {
+			video_count++;
+			if (video_count > 2) video_count = 1;
+			document.getElementById("webmSource").setAttribute("src", "/videos/banner"+video_count+".webm");
+			document.getElementById("mp4Source").setAttribute("src", "/videos/banner"+video_count+".mp4");
+			video.load();
+			video.play();
 		}
 	</script>
-	
-	<!-- Navigation/Welcome Banner -->
-	<div id="banner">
-	<img src="images/gifs/tempBanner.jpg" alt="img" id="bannerImg">
-		<div id= "bannerElements">
-			<img src="images/WhiteLogo.png" alt = "logo" id="bannerLogo">
-			<a href="">About Us</a>
-			<a href="">Newsletter</a>
-			<a href="">Social Media</a>
-			<a href="">Contact Us</a>
-		</div>	
-	</div>
-	
-	<!-- Contents -->
-	<div class="content">
-		1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>
+	<div id="construction2">
+			<img src="images/WhiteLogo.png" alt="Evergreen Clovis" id="construction">
+		<div>
+			<p>Our website's not quite ready yet.</p>
+			<p>In the meantime, why not check out our social media? </p>
+			<a href="https://www.facebook.com/Evergreen-Garden-Center-182217145174726/"><img src="images/facebook.png" class="social" alt="Facebook"></a>
+			<a href="https://www.instagram.com/evergreengardencenter/"><img src="images/insta.png" class="social" alt="Instagram"></a>
+		</div>
 	</div>
 </body>
 </html>
