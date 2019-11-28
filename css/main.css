@@ -6,12 +6,24 @@ body, html {
 	height: 100%;
 	margin: 0px;
 }
+#bg-image {
+	background-image: url("../images/gifs/IMG_0147.jpeg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
 #bg-video {
 	position: relative;
 	bottom: 0;
 	left: 0;
 	min-width: 100%;
 	min-height: 100%;
+	display: none;
+}
+@media only screen and (max-width: 760px) {
+	#bg-video {
+		display: none;
+	}
 }
 #construction {
 	max-width: 50%;
