@@ -18,6 +18,7 @@ body, html {
 	min-width: 18em;
 	width: auto;
 	height: auto;
+	filter: grayscale();
 }
 #construction2 {
 	font-family: 'Special Elite';
@@ -32,7 +33,7 @@ body, html {
 	max-width: 800px;
 	z-index: 5;
 	border-radius: 20px;
-	background-color: rgb(0, 10, 68, 0.2);
+	background-color: rgba(50, 50, 50, 0.2);
 }
 @supports ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))) {
 	#construction2 {
