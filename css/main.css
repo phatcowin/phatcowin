@@ -6,11 +6,10 @@ body, html {
 	height: 100%;
 	margin: 0px;
 }
-#bg-image {
+.bg-image {
 	background-image: url("../images/gifs/IMG_0147.jpeg");
+	width: 100%;
 	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
 }
 #bg-video {
 	position: relative;
@@ -30,7 +29,7 @@ body, html {
 	min-width: 18em;
 	width: auto;
 	height: auto;
-	filter: grayscale();
+	filter: brightness(10) grayscale();
 }
 #construction2 {
 	font-family: 'Special Elite';
