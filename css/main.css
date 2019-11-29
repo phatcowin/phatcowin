@@ -7,9 +7,8 @@ body, html {
 	margin: 0px;
 }
 .bg-image {
-	background-image: url("../images/gifs/IMG_0147.jpeg");
-	width: 100%;
 	background-repeat: no-repeat;
+	background-size: cover;
 }
 #bg-video {
 	position: relative;
