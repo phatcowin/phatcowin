@@ -18,9 +18,10 @@ body, html {
 		display: none;
 	}
 	body, html {
-		background-image: url(../images/gifs/IMG_0147.jpeg);
+		
 		bacgkround-repeat: no-repeat;
 		background-size: cover;
+		background-color: blue;
 	}
 }
 #construction {
