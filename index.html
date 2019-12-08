@@ -15,8 +15,8 @@
 		<img id="bgimg1" alt="bg-image" src="images/hero/hero1.jpeg">
 		<img id="bgimg2" alt="bg-image2" src="images/hero/hero2.jpeg">
 	</div> -->
-	<div id="slideshow">
-		<div id="bgimg"></div>
+	<div id="bgimg">
+		<div id="slideshow"></div>
 	</div>
 	<div id="construction2">
 			<img src="images/gradyLogo.png" alt="Evergreen Clovis" id="logo">
@@ -30,11 +30,16 @@
 	
 	<script>
 		var imageCount = 1;
+		bgimgjs = document.getElementById("bgimg").style;
+		slideshowjs = document.getElementById("slideshow").style;
 		function heroShow() {
 			setInterval (function() {
 				if (imageCount >= 6) imageCount = 0;
 				imageCount++;
-				document.getElementById("bgimg").style.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+				bgimgjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+				setTimeout(function() {
+					slideshowjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+				}, 1000);
 			}, 5000);
 		}
 		heroShow();

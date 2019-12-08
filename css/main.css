@@ -6,15 +6,20 @@ body, html {
 	height: 100%;
 	margin: 0px;
 }
-#slideshow {
-	position: relative;
+#bgimg {
+	position: absolute;
 	height: 100%;
 	width: 100%;
 	margin: 0;
 	overflow: hidden;
 	background-image: url("../images/hero/hero1.jpeg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	transition: background-image 1s ease-in-out;
+	z-index: 1;
 }
-#bgimg {
+#slideshow {
 	background-image: url("../images/hero/hero1.jpeg");
 	transition: background-image 1s ease-in-out;
 	position: absolute;
@@ -23,16 +28,7 @@ body, html {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-}
-@media only screen and (max-width: 760px) {
-	#bg-video {
-		display: none;
-	}
-	body, html {
-		background-image: url(../images/gifs/IMG_0147.jpeg);
-		bacgkround-repeat: no-repeat;
-		background-size: cover;
-	}
+	z-index: 2;
 }
 #logo {
 	max-width: 60%;
