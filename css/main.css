@@ -48,7 +48,7 @@ body, html {
 	max-width: 800px;
 	z-index: 5;
 	border-radius: 20px;
-	background-color: rgba(50, 50, 50, 0.2);
+	background-color: rgba(50, 50, 50, 0.5);
 }
 @supports ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))) {
 	#construction2 {
