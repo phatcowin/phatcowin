@@ -16,6 +16,7 @@ body, html {
 	background-position: center;
 	background-size: cover;
 	z-index: 2;
+	opacity: 0;
 }
 #slideshow {
 	background-image: url("../images/hero/hero1.jpeg");
