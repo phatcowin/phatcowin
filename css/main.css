@@ -6,12 +6,23 @@ body, html {
 	height: 100%;
 	margin: 0px;
 }
-#bg-video {
+#slideshow {
 	position: relative;
-	bottom: 0;
-	left: 0;
-	min-width: 100%;
-	min-height: 100%;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	overflow: hidden;
+	background-image: url("../images/hero/hero1.jpeg");
+}
+#bgimg {
+	background-image: url("../images/hero/hero1.jpeg");
+	transition: background-image 1s ease-in-out;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
 }
 @media only screen and (max-width: 760px) {
 	#bg-video {
@@ -23,8 +34,8 @@ body, html {
 		background-size: cover;
 	}
 }
-#construction {
-	max-width: 50%;
+#logo {
+	max-width: 60%;
 	min-width: 18em;
 	width: auto;
 	height: auto;
