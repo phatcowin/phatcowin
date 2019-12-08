@@ -32,36 +32,18 @@
 		var imageCount = 1;
 		bgimgjs = document.getElementById("bgimg").style;
 		slideshowjs = document.getElementById("slideshow").style;
-		function preloadImages(array) {
-    		if (!preloadImages.list) {
-				preloadImages.list = [];
-    		}
-   			var list = preloadImages.list;
-    		for (var i = 0; i < array.length; i++) {
-				var img = new Image();
-        		img.onload = function() {
-					var index = list.indexOf(this);
-            		if (index !== -1) {
-                		// remove image from the array once it's loaded
-                		// for memory consumption reasons
-                		list.splice(index, 1);
-					}
-        		}
-        		list.push(img);
-        		img.src = array[i];
-    		}
-		}
-		
+
 		function heroShow() {
-			preloadImages(["images/hero/hero1.jpeg", "images/hero/hero2.jpeg", "images/hero/hero3.jpeg", "images/hero/hero4.jpeg", "images/hero/hero5.jpeg", "images/hero/hero6.jpeg"]);
 			setInterval (function() {
-				if (imageCount >= 6) imageCount = 0;
-				imageCount++;
-				bgimgjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-				setTimeout(function() {
-					slideshowjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-				}, 1000);
+    			if (imageCount >= 6) imageCount = 0;
+    			imageCount++;
+    			bgimgjs.backgroundImage = "url(images/hero/hero"+(imageCount+1)+".jpeg";
+    			setTimeout(function() { 
+					slideshowjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg";
+    			}, 1000)
 			}, 5000);
+			
+			
 		}
 		heroShow();
 	</script>
