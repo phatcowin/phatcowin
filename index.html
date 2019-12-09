@@ -8,44 +8,21 @@
 	<!-- CSS Stylesheets -->
 	<link href="css/main.css" rel="stylesheet" media="all" />
 </head>
-
+	
 <body>
-	<!--
-	<div id="slideshow">
-		<img id="bgimg1" alt="bg-image" src="images/hero/hero1.jpeg">
-		<img id="bgimg2" alt="bg-image2" src="images/hero/hero2.jpeg">
-	</div> -->
-	<div id="bgimg"></div><div id="slideshow"></div>
-	<div id="construction2">
-			<img src="images/gradyLogo.png" alt="Evergreen Clovis" id="logo">
-		<div>
-			<p>Our website's not quite ready yet.</p>
-			<p>In the meantime, why not check out our social media? </p>
-			<a href="https://www.facebook.com/Evergreen-Garden-Center-182217145174726/"><img src="images/facebook.png" class="social" alt="Facebook"></a>
-			<a href="https://www.instagram.com/evergreengardencenter/"><img src="images/insta.png" class="social" alt="Instagram"></a>
+	<div class="background"></div>
+	<div class="page-content">
+		<div id="about-us">
+			<!--img src="" alt="Welcome to Evergreen!" -->
+			<h1>Welcome to Evergreen!</h1>
+			<p>Evergreen Garden Center has been doing business for over 30 years, specializing in roses, perennials and gifts. New lines of succulents, drought tolerant plants, pottery and iron trellises have completed our line. We also carry a full line of trees, shrubs, vegetables, chemicals and organic fertilizers.</p>
+			<div class="button-container">
+				<div class="button-1">Our History</div>
+				<div class="button-1">Our Staff </div>
+			</div>
 		</div>
 	</div>
-	
-	<script>
-		var imageCount = 1;
-		bgimgjs = document.getElementById("bgimg").style;
-		slideshowjs = document.getElementById("slideshow").style;
-		var heroLoaded = document.getElementById("bgimg").complete;
 
-		function heroShow() {
-			setInterval (function() {
-				if (heroLoaded = true) {
-					slideshowjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-					imageCount++;
-					if (imageCount > 9) imageCount = 1;
-					bgimgjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-				}
-			}, 5000);
-			
-			
-		}
-		heroShow();
-	</script>
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
 
