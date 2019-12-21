@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Evergreen Garden Center</title>
+	<link href="/images/favicon.png" rel="icon" type="image/png" />
+	
+	<!-- CSS Stylesheets -->
+	<link href="css/main.css" rel="stylesheet" media="all" />
+</head>
+
+<body>
+	<!--
+	<div id="slideshow">
+		<img id="bgimg1" alt="bg-image" src="images/hero/hero1.jpeg">
+		<img id="bgimg2" alt="bg-image2" src="images/hero/hero2.jpeg">
+	</div> -->
+	<div id="bgimg"></div><div id="slideshow"></div>
+	<div id="construction2">
+			<img src="images/gradyLogo.png" alt="Evergreen Clovis" id="logo">
+		<div>
+			<p>Our website's not quite ready yet.</p>
+			<p>In the meantime, why not check out our social media? </p>
+			<a href="https://www.facebook.com/Evergreen-Garden-Center-182217145174726/"><img src="images/facebook.png" class="social" alt="Facebook"></a>
+			<a href="https://www.instagram.com/evergreengardencenter/"><img src="images/insta.png" class="social" alt="Instagram"></a>
+		</div>
+	</div>
+	
+	<script>
+		var imageCount = 1;
+		bgimgjs = document.getElementById("bgimg").style;
+		slideshowjs = document.getElementById("slideshow").style;
+		var heroLoaded = document.getElementById("bgimg").complete;
+
+		function heroShow() {
+			setInterval (function() {
+				if (heroLoaded = true) {
+					slideshowjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+					imageCount++;
+					if (imageCount > 9) imageCount = 1;
+					bgimgjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+				}
+			}, 5000);
+			
+			
+		}
+		heroShow();
+	</script>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     	https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+
+	<script>
+  		// Your web app's Firebase configuration
+  		var firebaseConfig = {
+    		apiKey: "AIzaSyCxcjhIHQZu8FyVOs4d89ZM6vU-Y5XI1lc",
+    		authDomain: "evergreenonline-b3c5d.firebaseapp.com",
+    		databaseURL: "https://evergreenonline-b3c5d.firebaseio.com",
+    		projectId: "evergreenonline-b3c5d",
+    		storageBucket: "evergreenonline-b3c5d.appspot.com",
+    		messagingSenderId: "538111196325",
+    		appId: "1:538111196325:web:77425d4dfcd494b004614c",
+    		measurementId: "G-T9R7N41BRH"
+  		};
+  		// Initialize Firebase
+  		firebase.initializeApp(firebaseConfig);
+  		firebase.analytics();
+	</script>
+</body>
+</html>

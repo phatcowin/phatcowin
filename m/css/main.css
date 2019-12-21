@@ -1,0 +1,67 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Special+Elite&display=swap);
+/* CSS Document */
+
+body, html {
+	height: 100%;
+	margin: 0px;
+}
+#bgimg {
+	display: none;
+}
+#slideshow {
+	background-image: url("../images/hero/hero1.jpeg");
+	transition: background-image 1s ease-in-out;
+	-moz-transition: background-image 1s ease-in-out;
+	-webkit-transition: background-image 1s ease-in-out;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	z-index: 2;
+	opacity: 1;
+}
+#logo {
+	max-width: 60%;
+	min-width: 18em;
+	width: auto;
+	height: auto;
+	filter: brightness(10) grayscale();
+}
+#construction2 {
+	font-family: 'Special Elite';
+	text-align: center;
+	position: absolute;
+	width: 80%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	padding: 20px;
+	max-width: 800px;
+	z-index: 5;
+	border-radius: 20px;
+	background: rgb(0, 90, 0);
+	background: rgba(50, 50, 50, 0.5)
+}
+@supports ((-webkit-backdrop-filter: blur(6px)) or (backdrop-filter: blur(6px))) {
+	#construction2 {
+		background: rgba(0, 10, 68, 0.2);
+		-webkit-backdrop-filter: blur(6px);
+		backdrop-filter: blur(6px);
+	}
+}
+#facebook {
+	width: 50px;
+	padding-right: 10px;
+}
+#insta {
+	width: 50px;
+	padding-left: 10px;
+}
+.social {
+	width: 50px;
+	padding: 0px 5px 0px 5px;
+}
