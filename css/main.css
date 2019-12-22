@@ -6,7 +6,7 @@ body {
 	width: 100%;
 }
 #slideshow {
-	background-image: url("../images/hero/hero1.jpeg");
+	background-image: url("../images/hero/hero2.jpeg");
 	transition: background-image 1s ease-in-out;
 	-moz-transition: background-image 1s ease-in-out;
 	-webkit-transition: background-image 1s ease-in-out;
@@ -16,11 +16,10 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	z-index: 0;
-	opacity: 1;
+	z-index: 1;
 }
 #slideLoad {
-    display: none;
+    opacity: 0;
 }
 .background {
 	position: absolute;
@@ -56,6 +55,8 @@ p {
 	font-family: 'Questrial', sans-serif;
 	font-size: 1.2em;
 	text-align: center;
+	width: 100%;
+	margin: 0;
 }
 .text-blob {
 	position: absolute;
@@ -109,22 +110,25 @@ p {
     border: none;
     font-size: 1em;
     font-family: 'Montserrat', sans-serif;
-    text-align: left;
+    text-align: center;
     padding: 10px 10px 10px 10px;
-    width: 76%;
+    width: 78%;
     display: inline-block;
-    border-radius: 8px;
+    border-radius: 8px 0 0 8px;
+	margin-right: 0px;
 }
 .newsletter-submit {
-    background-color: white;
-    background-color: rgba(255, 255, 255, 0.8);
+	background-color: white;
+    background-color: rgba(0, 255, 0, 0.6);
     border: none;
     font-size: 1em;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     padding: 10px 13px;
     display: inline-block;
-    border-radius: 8px;
+    border-radius: 0 8px 8px 0;
+	margin-left: -4px;
+	-webkit-appearance: none;
 }
 #social-media {
 	
@@ -132,9 +136,11 @@ p {
 #contact-us {
 	
 }
-@supports ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
+@supports ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) or (-moz-backdrop-filter: blur(8px))) {
 	.text-blob {
 		backdrop-filter: blur(7px);
+		-webkit-backdrop-filter: blur(7px);
+		-moz-backdrop-filter: blur(7px);
 	}
     #about-us {
 	   background-color: rgba(0, 64, 3, 0.8);

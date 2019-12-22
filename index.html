@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
+	<meta name="theme-color" content="#004003" />
 	<title>Evergreen Garden Center</title>
 	<link href="/images/favicon.png" rel="icon" type="image/png" />
 	
@@ -11,6 +12,8 @@
 </head>
 	
 <body>
+	<div id="slideshow"></div>
+	<div id="slideLoad"></div>
     <div id="nav-bar">
         <a href=""><img src="images/gradyLogo.png" alt="Evergreen.png"></a>
         <li><a href="#contact-us">Contact Us</a></li>
@@ -18,9 +21,7 @@
         <li><a href="#newsletter">Newsletter</a></li>
         <li><a href="#about-us">About Us</a></li>
 	</div>
-	
-	<div class="background" id="hero1"></div>
-    <div id="slideLoad"></div><div id="slideshow"></div>
+	<div id="nav-button"><img src="images/smLogo.png" alt="&darr;"></div>
     <div class="background" id="hero2"></div>
     
 	<div class="page-content">
@@ -36,8 +37,12 @@
             <h1>Sign up for our newsletter!</h1>
             <p>Get seasonal planting tips, updates to our inventory and exclusive offers emailed direclty to you! We only email once or twice a month, and we won't give out your information.</p>
             <div class="button-container">
-                <input type="email" class="newsletter-input" placeholder="Sign me up!"/>
-                <input type="submit" class="newsletter-submit" value="&rarr;"/>
+				<form action="https://evergreengardencenter.us17.list-manage.com/subscribe/post" method="POST">
+    				<input type="hidden" name="u" value="f88f0cf60aff4c379bde35b3a">
+    				<input type="hidden" name="id" value="308d926502">
+                	<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" class="newsletter-input" placeholder="Sign me up!"/>
+                	<input type="submit" class="newsletter-submit" value="&rarr;"/>
+				</form>
             </div>
         </div>
 	</div>
@@ -70,39 +75,45 @@
 	<script>
         // Navigation auto-hide
 		navProperties = document.getElementById("nav-bar").style;
+		navButtonProperties = document.getElementById("nav-button").style;
 		var prevScrollPos = window.pageYOffset;
         
 		window.onscroll = function() {
 			var scrollPos = window.pageYOffset;
-			if (prevScrollPos > scrollPos) {
+			if (prevScrollPos > scrollPos || scrollPos <= 0) {
 				navProperties.transition = "opacity 0.4s ease-in, top 0.4s ease-out";
 				navProperties.top = "0";
 				navProperties.opacity = "1";
+				navButtonProperties.opacity = "1"
+				navButtonProperties.transform = "scale(1)";
 			} else {
 				navProperties.transition = "opacity 0.3s, top 0.5s";
 				navProperties.top = "-90px";
 				navProperties.opacity = "0";
+				navButtonProperties.opacity = "0";
+				navButtonProperties.transform = "scale(0.5)";
 			}
 			prevScrollPos = scrollPos;
 		}
-        
+	</script>
+	<script>
         // Slideshow
         var imageCount = 1;
-        slideloadjs = document.getElementById("slideLoad").style;
+        bgimgjs = document.getElementById("slideLoad").style;
         slideshowjs = document.getElementById("slideshowjs").style;
         var heroLoaded = document.getElementById("slideLoad").complete;
         
-        function heroShow() {
-            setInterval (function() {
-                if (heroLoaded = true) {
-                    slideshowjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-                    imageCount++;
-                    if (imageCount > 9) imageCount = 1;
-                    slideloadjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-                }
-            }, 5000);
-        }
-        heroShow();
+       	function heroShow() {
+			setInterval (function() {
+				if (heroLoaded = true) {
+					slideshowjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+					imageCount++;
+					if (imageCount > 9) imageCount = 1;
+					bgimgjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+				}
+			}, 5000);	
+		}
+		heroShow();
 	</script>
 </body>
 </html>
