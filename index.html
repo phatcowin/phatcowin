@@ -127,24 +127,5 @@
 			navShade.pointerEvents = "none";
 		}
 	</script>
-	<script>
-        // Slideshow
-        let imageCount = 1;
-        bgimgjs = document.getElementById("slideLoad").style;
-        slideshowjs = document.getElementById("slideshowjs").style;
-        const heroLoaded = document.getElementById("slideLoad").complete;
-        
-       	function heroShow() {
-			setInterval (function() {
-				if (heroLoaded = true) {
-					slideshowjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-					imageCount++;
-					if (imageCount > 9) imageCount = 1;
-					bgimgjs.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-				}
-			}, 5000);	
-		}
-		heroShow();
-	</script>
 </body>
 </html>
