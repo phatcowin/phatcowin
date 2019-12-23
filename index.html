@@ -23,20 +23,23 @@
         <li><a href="#about-us">About Us</a></li>
 	</div>
 	
-	<div id="nav-button"><img src="images/smLogo.png" alt="&darr;" onclick="openMenu()"></div>
+	<div id="nav-button"><img src="images/hamburger.png" alt="_" onclick="openMenu()" /></div>
 	<div id="nav-screen">
 			<li style="border-radius: 20px 20px 0 0"><a href="#body" onclick="return closeMenu();" style>Home</a></li>
 			<li><a href="#about-us" onclick="return closeMenu();">About Us</a></li>
 			<li><a href="#newsletter" onclick="return closeMenu();">Newsletter</a></li>
 			<li><a href="#social-media" onclick="return closeMenu();">Social Media</a></li>
 			<li style="border-radius: 0 0 20px 20px; margin-bottom: 10px;"><a href="#contact-us" onclick="return closeMenu();">Contact Us</a></li>
-			<li style="border-radius: 20px"><a onclick="return closeMenu()">Close</a></li>
+		<li style="border-radius: 20px"><a onclick="return closeMenu()"><b>Close</b></a></li>
 	</div>
 	<div id="background-shader" onclick="closeMenu();"></div>
 	
-    <div class="background" id="hero2"></div>
-    
+    <!--<div class="background" id="hero2"></div>-->
+	<div id="mobile-banner">
+		<img src="images/gradyLogo.png" alt="Evergreen Garden Center" />
+	</div>
 	<div class="page-content">
+
 		<div id="about-us" class="text-blob">
 			<h1>Welcome to Evergreen!</h1>
 			<p>Evergreen Garden Center has been doing business for over 30 years, specializing in roses, perennials and gifts. New lines of succulents, drought tolerant plants, pottery and iron trellises have completed our line. We also carry a full line of trees, shrubs, vegetables, chemicals and organic fertilizers.</p>
@@ -48,22 +51,21 @@
         <div id="newsletter" class="text-blob">
             <h1>Sign up for our newsletter!</h1>
             <p>Get seasonal planting tips, updates to our inventory and exclusive offers emailed direclty to you! We only email once or twice a month, and we won't give out your information.</p>
-            <div class="button-container">
+            <div class="newsletter-container">
 				<form action="https://evergreengardencenter.us17.list-manage.com/subscribe/post" method="POST">
     				<input type="hidden" name="u" value="f88f0cf60aff4c379bde35b3a">
     				<input type="hidden" name="id" value="308d926502">
                 	<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" class="newsletter-input" placeholder="Sign me up!"/>
-                	<input type="submit" class="newsletter-submit" value="&rarr;"/>
+                	<input type="submit" id="submit" class="newsletter-input" value="&rarr;"/>
 				</form>
             </div>
         </div>
 		<div id="social-media">
-			<!-- SnapWidget -->
-			<iframe src="https://snapwidget.com/embed/773170" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:915px; height:610px"></iframe>
+			<h1>Find us on social media!</h1>
+			<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/f6bc76597e7e5bdfaf996b08dd3df084.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+
 		</div>
 	</div>
-	
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
 	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
@@ -101,7 +103,7 @@
 				navProperties.top = "0";
 				navProperties.opacity = "1";
 				navButtonProperties.opacity = "1"
-				navButtonProperties.transform = "scale(1)";
+				navButtonProperties.bottom = "11px";
 				navButtonProperties.cursor = "pointer";
 				navButtonProperties.pointerEvents = "auto";
 			} else {
@@ -109,7 +111,7 @@
 				navProperties.top = "-90px";
 				navProperties.opacity = "0";
 				navButtonProperties.opacity = "0";
-				navButtonProperties.transform = "scale(0.5)";
+				navButtonProperties.bottom = "-80px";
 				navButtonProperties.cursor = "default";
 				navButtonProperties.pointerEvents = "none";
 			}
