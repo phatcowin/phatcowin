@@ -12,8 +12,8 @@
 </head>
 	
 <body>
-	<div id="slideshow"></div>
-	<div id="slideLoad"></div>
+	<div id="slideshow"></div><div id="slideLoad"></div>
+	
     <div id="nav-bar">
         <a href=""><img src="images/gradyLogo.png" alt="Evergreen.png"></a>
         <li><a href="#contact-us">Contact Us</a></li>
@@ -21,7 +21,18 @@
         <li><a href="#newsletter">Newsletter</a></li>
         <li><a href="#about-us">About Us</a></li>
 	</div>
-	<div id="nav-button"><img src="images/smLogo.png" alt="&darr;"></div>
+	
+	<div id="nav-button"><img src="images/smLogo.png" alt="&darr;" onclick="openMenu()"></div>
+	<div id="nav-screen">
+			<li style="border-radius: 20px 20px 0 0"><a href="#body" onclick="return closeMenu();" style>Home</a></li>
+			<li><a href="#about-us" onclick="return closeMenu();">About Us</a></li>
+			<li><a href="#newsletter" onclick="return closeMenu();">Newsletter</a></li>
+			<li><a href="#social-media" onclick="return closeMenu();">Social Media</a></li>
+			<li style="border-radius: 0 0 20px 20px; margin-bottom: 10px;"><a href="#contact-us" onclick="return closeMenu();">Contact Us</a></li>
+			<li style="border-radius: 20px"><a onclick="return closeMenu()">Close</a></li>
+	</div>
+	<div id="background-shader" onclick="closeMenu();"></div>
+	
     <div class="background" id="hero2"></div>
     
 	<div class="page-content">
@@ -73,35 +84,55 @@
   		firebase.analytics();
 	</script>
 	<script>
-        // Navigation auto-hide
+        // nav-bar/nav-button auto-hide
 		navProperties = document.getElementById("nav-bar").style;
 		navButtonProperties = document.getElementById("nav-button").style;
-		var prevScrollPos = window.pageYOffset;
+		let prevScrollPos = window.pageYOffset;
         
 		window.onscroll = function() {
-			var scrollPos = window.pageYOffset;
+			let scrollPos = window.pageYOffset;
 			if (prevScrollPos > scrollPos || scrollPos <= 0) {
 				navProperties.transition = "opacity 0.4s ease-in, top 0.4s ease-out";
 				navProperties.top = "0";
 				navProperties.opacity = "1";
 				navButtonProperties.opacity = "1"
 				navButtonProperties.transform = "scale(1)";
+				navButtonProperties.cursor = "pointer";
+				navButtonProperties.pointerEvents = "auto";
 			} else {
 				navProperties.transition = "opacity 0.3s, top 0.5s";
 				navProperties.top = "-90px";
 				navProperties.opacity = "0";
 				navButtonProperties.opacity = "0";
 				navButtonProperties.transform = "scale(0.5)";
+				navButtonProperties.cursor = "default";
+				navButtonProperties.pointerEvents = "none";
 			}
 			prevScrollPos = scrollPos;
+		}
+		
+		// nav-screen show/hide functions
+		navScreen = document.getElementById("nav-screen").style;
+		navShade = document.getElementById("background-shader").style;
+		
+		function openMenu() {
+			navScreen.bottom = "10px";
+			navShade.opacity = "1";
+			navShade.pointerEvents = "auto";
+		}
+		
+		function closeMenu() {
+			navScreen.bottom = "-500px";
+			navShade.opacity = "0";
+			navShade.pointerEvents = "none";
 		}
 	</script>
 	<script>
         // Slideshow
-        var imageCount = 1;
+        let imageCount = 1;
         bgimgjs = document.getElementById("slideLoad").style;
         slideshowjs = document.getElementById("slideshowjs").style;
-        var heroLoaded = document.getElementById("slideLoad").complete;
+        const heroLoaded = document.getElementById("slideLoad").complete;
         
        	function heroShow() {
 			setInterval (function() {
