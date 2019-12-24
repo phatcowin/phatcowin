@@ -176,6 +176,10 @@ p {
 	width: 100%;
 	top: 300%;
 }
+#contact-us p {
+	margin-top: -15px;
+	text-align: center;
+}
 @supports ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) or (-moz-backdrop-filter: blur(8px))) {
 	.text-blob {
 		backdrop-filter: blur(7px);
