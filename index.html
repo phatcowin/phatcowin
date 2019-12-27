@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<meta name="theme-color" content="#004003" />
+	<meta name="theme-color" content="#2E282A" />
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
 	<title>Evergreen Garden Center</title>
 	<link href="/images/favicon.png" rel="icon" type="image/png" />
@@ -14,7 +14,7 @@
 	
 <body>
 	<div id="slideshow"></div><div id="slideLoad"></div>
-	
+	<div id="gradient"></div>
     <div id="nav-bar">
         <a href=""><img src="images/gradyLogo.png" alt="Evergreen.png"></a>
         <li><a href="#contact-us">Contact Us</a></li>
@@ -44,8 +44,8 @@
 			<h1>Welcome to Evergreen!</h1>
 			<p>Evergreen Garden Center has been doing business for over 30 years, specializing in roses, perennials and gifts. New lines of succulents, drought tolerant plants, pottery and iron trellises have completed our line. We also carry a full line of trees, shrubs, vegetables, chemicals and organic fertilizers.</p>
 			<div class="button-container">
-				<button class="button-1">Our History</button>
-				<button class="button-1">Our Staff</button>
+				<button class="button-1"><b>Our History</b></button>
+				<button class="button-1"><b>Our Staff</b></button>
 			</div>
 		</div>
         <div id="newsletter" class="text-blob">
@@ -116,18 +116,18 @@
 				navProperties.transition = "opacity 0.4s ease-in, top 0.4s ease-out";
 				navProperties.top = "0";
 				navProperties.opacity = "1";
-				navButtonProperties.opacity = "1"
-				navButtonProperties.bottom = "11px";
+				navButtonProperties.right = "25px";
 				navButtonProperties.cursor = "pointer";
 				navButtonProperties.pointerEvents = "auto";
+				navButtonProperties.transform = "rotate(0deg)";
 			} else {
 				navProperties.transition = "opacity 0.3s, top 0.5s";
 				navProperties.top = "-90px";
 				navProperties.opacity = "0";
-				navButtonProperties.opacity = "0";
-				navButtonProperties.bottom = "-80px";
+				navButtonProperties.right = "-100px";
 				navButtonProperties.cursor = "default";
 				navButtonProperties.pointerEvents = "none";
+				navButtonProperties.transform = "rotate(115deg)";
 			}
 			prevScrollPos = scrollPos;
 		}

@@ -6,7 +6,7 @@
     list-style-type: none;
     padding: 0 20px;
     overflow: hidden;
-    background-color: rgba(200, 200, 200, 0.5);
+    background-color: white;
     height: 80px;
     width: 50%;
 	min-width: 635px;
@@ -51,14 +51,13 @@
 	z-index: 1000;
 	position: fixed;
 	width: 70px;
-	height: 65px;
-	bottom: 11px;
-	left: 50%;
-	transform: translate(-50%, 0);
-	background-color: rgba(200, 200, 200, 0.6);
+	height: 70px;
+	bottom: 25px;
+	right: 25px;
+	background-color: #2E282A;
 	border-radius: 1000px;
-	transition: opacity 0.4s ease-out, bottom 0.4s;
-	padding: 5px 50px;
+	transition: opacity 0.4s ease-out, right 0.4s, transform 0.4s;
+	padding: 15px 15px;
 	display: none;
 }
 #background-shader {
@@ -96,20 +95,10 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
-@supports ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
-    #nav-bar {
-        backdrop-filter: blur(6.9px);
-        -webkit-backdrop-filter: blur(6.9px);
-    }
-	#nav-button {
-		backdrop-filter: blur(6.9px);
-		-webkit-backdrop-filter: blur(6.9px);
-	}
-}
 #nav-bar img {
     padding: 8px 10px 0 15px;
     height: 68px;
-    filter: brightness(0.4) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    filter: brightness(0.6) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
     transition: filter 0.4s;
 }
 #nav-bar img:hover {
@@ -130,7 +119,7 @@
     color: black;
 }
 #nav-bar li a:hover {
-    color: white;
+    color: forestgreen;
 }
 @supports ((backdrop-filter: blur(7px)) or (-webkit-backdrop-filter: blur(7px)) or (-moz-backdrop-filter: blur(7px))) {
 	#nav-screen li {

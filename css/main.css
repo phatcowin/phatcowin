@@ -1,5 +1,26 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Montserrat|Questrial&display=swap);
+@font-face {
+    font-family: '2-questa_grande_regular_31';
+    src: url("../fonts/2-questa_grande_regular_31-webfont.woff2") format('woff2'),
+         url("../fonts/2-questa_grande_regular_31-webfont.woff") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/*
+Pallete: 
+#004445
+#2C7873
+#6FB98F
+#FFD800
+
+2.0
+#E4572E RED
+#17BEBB	BLUE
+#FFC914 YELLOW
+#4AAD52 GREEN
+#2E282A GRAY-BROWN
+*/
 body {
 	margin: 0;
 	height: 100%;
@@ -17,6 +38,17 @@ body {
 	background-position: center;
 	background-size: cover;
 	z-index: 1;
+	filter: contrast(1.2);
+}
+#gradient {
+	z-index: 2;
+	opacity: 0.8;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: linear-gradient(135deg, #E4572E, #17BEBB);
 }
 #slideLoad {
     opacity: 0;
@@ -45,8 +77,9 @@ body {
 	width: 90%;
 	left: 50%;
 	transform: translate(-50%, 0);
-	background-color: rgba(200, 200, 200, 0.5);
+	background-color: white;
 	border-radius: 100px;
+	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
 }
 #mobile-banner img {
 	position: relative;
@@ -54,7 +87,7 @@ body {
 	left: 50%;
 	margin-top: 3px;
 	transform: translate(-50%, 0);
-	filter: brightness(0.4) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+	filter: brightness(0.6) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 .page-content {
 	margin: auto;
@@ -85,16 +118,14 @@ p {
 	padding: 30px;
 	color: white;
 	max-width: 300px;
-    text-shadow: 1px 1px 2px rgb(0, 0, 0,);
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
     z-index: 2;
 }
 #about-us {
     top: 30%;
     left: 10%;
-    background: rgb(0, 64, 3);
-    background: rgba(0, 64, 3, 0.91);
+    background: white;
+	color: black;
 }
 #about-us p {
 	padding-bottom: 10px;
@@ -104,14 +135,12 @@ p {
 	position: relative;
 	display: inline;
 	text-align: center;
-	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-	background-color: rgb(0, 200, 0);
-	background-color: rgba(255, 255, 255, 0.3);
+	background-color: #FFC914;
 	border-radius: 8px;
 	padding: 1em;
 	font-family: 'Questrial', sans-serif;
 	font-size: 1em;
-	color: white;
+	color: black;
 	border-style: none;
 }
 #about-us .button-1 {
@@ -120,7 +149,7 @@ p {
 #newsletter {
 	top: 130%;
     right: 10%;
-    background-color: rgba(180, 10, 10, 0.9);
+    background-color: #2E282A ;
 }
 #newsletter p {
     padding-bottom: 10px;
@@ -153,10 +182,11 @@ p {
 	padding-top: 1px;
 	width: 50px;
 	right: 30px;
-	background-color: rgb(0, 130, 255);
+	background-color: #17BEBB;
 	-webkit-appearance: none;
 	border-radius: 0 8px 8px 0;
 	cursor: pointer;
+	color: white;
 }
 #social-media {
 	z-index: 3;
@@ -177,24 +207,6 @@ p {
 #contact-us p {
 	margin-top: -15px;
 	text-align: center;
-}
-@supports ((backdrop-filter: blur(8px)) or (-webkit-backdrop-filter: blur(8px)) or (-moz-backdrop-filter: blur(8px))) {
-	.text-blob {
-		backdrop-filter: blur(7px);
-		-webkit-backdrop-filter: blur(7px);
-		-moz-backdrop-filter: blur(7px);
-	}
-	#mobile-banner {
-		backdrop-filter: blur(7px);
-		-webkit-backdrop-filter: blur(7px);
-		-moz-backdrop-filter: blur(7px);
-	}
-    #about-us {
-	   background-color: rgba(0, 64, 3, 0.8);
-    }
-    #newsletter {
-        background-color: rgba(180, 10, 10, 0.5);
-    }
 }
 #footer {
 	width: 100%;
