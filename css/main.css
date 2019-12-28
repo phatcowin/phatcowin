@@ -27,7 +27,7 @@ body {
 	width: 100%;
 }
 #slideshow {
-	background-image: url("../images/hero/hero2.jpeg");
+	background-image: url("../images/hero/hero4.jpeg");
 	transition: background-image 1s ease-in-out;
 	-moz-transition: background-image 1s ease-in-out;
 	-webkit-transition: background-image 1s ease-in-out;
@@ -41,13 +41,13 @@ body {
 }
 #gradient {
 	z-index: 2;
-	opacity: 0.73;
+	opacity: 0.56;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: linear-gradient(210deg, #E4572E, #17BEBB);
+	background: linear-gradient(210deg, red, blue);
 }
 #hero-bottom {
 	position: absolute;
@@ -95,7 +95,7 @@ body {
 	left: 50%;
 	margin-top: 3px;
 	transform: translate(-50%, 0);
-	filter: brightness(0.6) drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+	filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
 }
 .page-content {
 	margin: auto;
@@ -229,7 +229,7 @@ p {
 /* MOBILE RENDER: */
 @media only screen and (max-width: 680px) {
 	#mobile-banner {
-		display: block;
+		display: none;
 	}
 	.text-blob {
 		width: 95%;
