@@ -143,12 +143,12 @@ p {
 	position: relative;
 	display: inline;
 	text-align: center;
-	background-color: #FFC914;
+	background-color: #4AAD52;
 	border-radius: 8px;
 	padding: 1em;
 	font-family: 'Questrial', sans-serif;
 	font-size: 1em;
-	color: black;
+	color:white;
 	border-style: none;
 }
 #about-us .button-1 {
