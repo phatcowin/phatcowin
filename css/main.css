@@ -50,6 +50,15 @@ body {
 	left: 0;
 	background: linear-gradient(135deg, #E4572E, #17BEBB);
 }
+#hero-bottom {
+	position: absolute;
+	width: 100%;
+	height: 120px;
+	bottom: 0;
+	z-index: 3;
+	background: url("../images/heroBottom.png");
+	background-position: bottom;
+}
 #slideLoad {
     opacity: 0;
 }
