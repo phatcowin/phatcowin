@@ -52,7 +52,7 @@
 	
 	<!-- STAFF SECTION -->
 	<div id="staff-select">
-		<li style="background: #E4572E" onclick="hideStaffMenu()">Back</li>
+		<li style="color: var(--pal-red);" onclick="hideStaffMenu()">Back</li>
 		<li onclick="showStaffInfo(mike)">Mike Ravicchio</li>
 		<li onclick="showStaffInfo(bryan)">Bryan Ravicchio</li>
 		<li>Kat Ravicchio</li>
@@ -208,28 +208,33 @@
 		aboutUs = document.getElementById("about-us").style;
 		staffMenu = document.getElementById("staff-select").style;
 		staffInfo = document.getElementById("staff-info").style;
+		cssvar = document.documentElement.style;
 		// staff show/hide functions
 		function showStaffMenu() { // show staff scroller
-			staffMenu.opacity = "1";
+			cssvar.setProperty('--staffselect-d', '15%');
+			cssvar.setProperty('--staffselect-m', '50%');
 			aboutUs.filter = "brightness(0.85)";
 			staffMenu.pointerEvents = "auto";
 		}
 		function hideStaffMenu() {
-			staffMenu.opacity = "0";
+			cssvar.setProperty('--staffselect-d', '-55%');
+			cssvar.setProperty('--staffselect-m', '-50%');
 			aboutUs.filter = "brightness(1)";
 			staffMenu.pointerEvents = "none";
 		}
 		function showStaffInfo(member) { // show staff-info
 			aboutUs.filter = "brightness(0.7)";
 			staffMenu.filter = "brightness(0.85)";
-			staffInfo.opacity = "1";
+			cssvar.setProperty('--staffinfo-d', '20%');
+			cssvar.setProperty('--staffinfo-m', '50%');
 			staffInfo.pointerEvents = "auto";
-			document.getElementById( member ).style.display = "inline";
+			// to-do: make staff bios dynamically show/hide
 		}
 		function hideStaffInfo() {
 			aboutUs.filter = "brightness(0.85)";
 			staffMenu.filter = "brightness(1)";
-			staffInfo.opacity = "0";
+			cssvar.setProperty('--staffinfo-d', '-55%');
+			cssvar.setProperty('--staffinfo-m', '-50%');
 			staffInfo.pointerEvents = "none";
 		}
 	</script>

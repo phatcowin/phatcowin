@@ -7,13 +7,27 @@
     font-weight: normal;
     font-style: normal;
 }
-/*
-#E4572E RED
-#17BEBB	BLUE
-#FFC914 YELLOW
-#4AAD52 GREEN
-#2E282A GRAY-BROWN
-*/
+
+
+:root {
+	/* PALETTE */
+	--pal-red: #E4572E;
+	--pal-blue: #17BEBB;
+	--pal-yellow: #FFC914;
+	--pal-green: #4AAD52;
+	--pal-gray: #2E282A;
+	
+	/* STAFF CARDS */
+	--staffselect-d: -55%;
+	--staffselect-m: -50%;
+	--staffinfo-d: -55%;
+	--staffinfo-m: -50%;
+	
+	/* BACKGROUNDS */
+	--topbackground-d: url("../images/hero/hero9.jpeg");
+	--topbackground-m: url("../images/hero/hero9.jpeg");
+}
+
 body {
 	margin: 0;
 	height: 100%;
@@ -21,8 +35,8 @@ body {
 }
 #slideshow {
 	will-change: background;
-	background: url("../images/hero/hero9.jpeg");
-	transition: background-image 1s ease-in-out;
+	background: var(--topbackground-d);
+	transition: background 1s ease-in-out;
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -141,7 +155,7 @@ p {
 	position: relative;
 	display: inline;
 	text-align: center;
-	background-color: #4AAD52;
+	background-color: var(--pal-green);
 	border-radius: 8px;
 	padding: 1em;
 	font-family: 'Questrial', sans-serif;
@@ -154,14 +168,13 @@ p {
 }
 #staff-select {
 	position: absolute;
-	transition: opacity 0.3s;
-	opacity: 0;
+	transition: left 0.5s;
 	z-index: 4;
 	width: 360px;
 	border-radius: 10px;
 	background: white;
 	top: 25%;
-	left: 10%;
+	left: var(--staffselect-d);
 	height: 451px;
 	overflow-y: scroll;
 	overflow-x: hidden;
@@ -181,19 +194,18 @@ p {
 }
 #staff-info {
 	position: absolute;
-	transition: opacity 0.3s;
+	transition: left 0.5s;
 	z-index: 5;
 	border-radius: 10px;
 	background: white;
 	top: 25%;
-	left: 10%;
+	left: var(--staffinfo-d);
 	width: 300px;
 	height: 391px;
 	font-family: 'Questrial', sans-serif;
 	padding: 30px;
 	overflow-y: scroll;
 	overflow-x: hidden;
-	opacity: 0;
 	pointer-events: none;
 }
 .button-2 {
@@ -282,6 +294,9 @@ p {
 
 /* MOBILE RENDER: */
 @media only screen and (max-width: 680px) {
+	#slideshow {
+		background: var(--topbackground-m);
+	}
 	#mobile-banner {
 		display: none;
 	}
@@ -294,13 +309,13 @@ p {
 		transform: translate(-50%, -50%);
 	}
 	#staff-select {
-		top: 40%;
-		left: 50%;
+		top: 43%;
+		left: var(--staffselect-m);
 		transform: translate(-50%, -50%);
 	}
 	#staff-info {
-		left: 50%;
-		top: 40%;
+		left: var(--staffinfo-m);
+		top: 46%;
 		transform: translate(-50%, -50%);
 	}
 	#newsletter {

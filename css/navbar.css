@@ -103,11 +103,10 @@
 #nav-bar img {
     padding: 8px 10px 0 15px;
     height: 68px;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
     transition: filter 0.4s;
 }
 #nav-bar img:hover {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+    filter: brightness(0);
 }
 #nav-bar li {
     float: right;
@@ -124,7 +123,7 @@
     color: black;
 }
 #nav-bar li a:hover {
-    color: #4AAD52
+    color: var(--pal-green);
 }
 @supports ((backdrop-filter: blur(7px)) or (-webkit-backdrop-filter: blur(7px)) or (-moz-backdrop-filter: blur(7px))) {
 	#nav-screen li {
