@@ -20,10 +20,9 @@ body {
 	width: 100%;
 }
 #slideshow {
-	background-image: url("../images/hero/hero9.jpeg");
+	will-change: background;
+	background: url("../images/hero/hero9.jpeg");
 	transition: background-image 1s ease-in-out;
-	-moz-transition: background-image 1s ease-in-out;
-	-webkit-transition: background-image 1s ease-in-out;
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -33,6 +32,7 @@ body {
 	z-index: 1;
 }
 #gradient {
+	will-change: opacity;
 	z-index: 2;
 	opacity: 0.56;
 	position: absolute;
@@ -41,6 +41,7 @@ body {
 	top: 0;
 	left: 0;
 	background: linear-gradient(210deg, red, blue);
+	transition: opacity 0.5s;
 }
 #hero-bottom {
 	position: absolute;
@@ -130,6 +131,7 @@ p {
     left: 10%;
     background: white;
 	color: black;
+	filter: brightness(1);
 }
 #about-us p {
 	padding-bottom: 10px;
@@ -149,6 +151,50 @@ p {
 }
 #about-us .button-1 {
 	margin: 0px 2px 0px 2px;
+}
+#staff-select {
+	position: absolute;
+	transition: left 0.5s;
+	z-index: 4;
+	width: 360px;
+	border-radius: 10px;
+	background: white;
+	top: 25%;
+	transform: translate(-50%, 0);
+	left: -50%;
+	height: 451px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	filter: brightness(1);
+}
+#staff-select li {
+	text-decoration: none;
+	list-style: none;
+	text-align: center;
+	font-family: 'Questrial', sans-serif;
+	font-size: 1.5em;
+	padding: 20px;
+	border-bottom: 1px solid black;
+	color: black;
+	cursor: pointer;
+}
+#staff-info {
+	position: absolute;
+	transition: left 0.5s;
+	z-index: 5;
+	border-radius: 10px;
+	background: white;
+	top: 25%;
+	left: -100%;
+	width: 300px;
+	height: 391px;
+	font-family: 'Questrial', sans-serif;
+	padding: 30px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.button-2 {
+	
 }
 #newsletter {
 	top: 130%;
@@ -240,8 +286,16 @@ p {
 		width: 95%;
 	}
 	#about-us {
-		top: 50%;
+		top: 40%;
 		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	#staff-select {
+		top: 40%;
+		transform: translate(-50%, -50%);
+	}
+	#staff-info {
+		top: 40%;
 		transform: translate(-50%, -50%);
 	}
 	#newsletter {
