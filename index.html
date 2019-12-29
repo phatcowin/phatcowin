@@ -210,28 +210,27 @@
 		staffInfo = document.getElementById("staff-info").style;
 		// staff show/hide functions
 		function showStaffMenu() { // show staff scroller
-			staffMenu.left = "51%";
+			staffMenu.opacity = "1";
 			aboutUs.filter = "brightness(0.85)";
-			aboutUs.pointerEvents = "none";
+			staffMenu.pointerEvents = "auto";
 		}
 		function hideStaffMenu() {
-			staffMenu.left = "-50%";
+			staffMenu.opacity = "0";
 			aboutUs.filter = "brightness(1)";
-			aboutUs.pointerEvents = "auto";
+			staffMenu.pointerEvents = "none";
 		}
 		function showStaffInfo(member) { // show staff-info
-			
 			aboutUs.filter = "brightness(0.7)";
 			staffMenu.filter = "brightness(0.85)";
-			staffInfo.left = "52%";
-			staffMenu.pointerEvents = "none";
+			staffInfo.opacity = "1";
+			staffInfo.pointerEvents = "auto";
 			document.getElementById( member ).style.display = "inline";
 		}
 		function hideStaffInfo() {
 			aboutUs.filter = "brightness(0.85)";
 			staffMenu.filter = "brightness(1)";
-			staffInfo.left = "-50%";
-			staffMenu.pointerEvents = "auto";
+			staffInfo.opacity = "0";
+			staffInfo.pointerEvents = "none";
 		}
 	</script>
 </body>

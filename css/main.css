@@ -154,18 +154,19 @@ p {
 }
 #staff-select {
 	position: absolute;
-	transition: left 0.5s;
+	transition: opacity 0.3s;
+	opacity: 0;
 	z-index: 4;
 	width: 360px;
 	border-radius: 10px;
 	background: white;
 	top: 25%;
-	transform: translate(-50%, 0);
-	left: -50%;
+	left: 10%;
 	height: 451px;
 	overflow-y: scroll;
 	overflow-x: hidden;
 	filter: brightness(1);
+	pointer-events: none;
 }
 #staff-select li {
 	text-decoration: none;
@@ -174,24 +175,26 @@ p {
 	font-family: 'Questrial', sans-serif;
 	font-size: 1.5em;
 	padding: 20px;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid gray;
 	color: black;
 	cursor: pointer;
 }
 #staff-info {
 	position: absolute;
-	transition: left 0.5s;
+	transition: opacity 0.3s;
 	z-index: 5;
 	border-radius: 10px;
 	background: white;
 	top: 25%;
-	left: -100%;
+	left: 10%;
 	width: 300px;
 	height: 391px;
 	font-family: 'Questrial', sans-serif;
 	padding: 30px;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	opacity: 0;
+	pointer-events: none;
 }
 .button-2 {
 	
@@ -292,9 +295,11 @@ p {
 	}
 	#staff-select {
 		top: 40%;
+		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 	#staff-info {
+		left: 50%;
 		top: 40%;
 		transform: translate(-50%, -50%);
 	}
