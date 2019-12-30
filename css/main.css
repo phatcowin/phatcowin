@@ -16,6 +16,7 @@
 	--pal-yellow: #FFC914;
 	--pal-green: #4AAD52;
 	--pal-gray: #2E282A;
+	--pal-lgray: #EFEFEF;
 	
 	/* STAFF CARDS */
 	--staffselect-d: -55%;
@@ -27,6 +28,7 @@
 	--default-top-background: url("../images/hero/hero9.jpeg");
 	--topbackground-d: var(--default-top-background);
 	--topbackground-m: var(--default-top-background);
+	--gradient-opacity: 0;
 }
 
 body {
@@ -36,7 +38,7 @@ body {
 }
 #slideshow {
 	will-change: background;
-	background: var(--topbackground-d);
+	background: url("../images/hero/hero9.jpeg");
 	transition: background 1s ease-in-out;
 	position: absolute;
 	width: 100%;
@@ -49,14 +51,14 @@ body {
 #gradient {
 	will-change: opacity;
 	z-index: 2;
-	opacity: 0.56;
+	opacity: 0;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: linear-gradient(210deg, red, blue);
-	transition: opacity 0.5s;
+	background: linear-gradient(60deg, red, blue);
+	transition: opacity 0s;
 }
 #hero-bottom {
 	position: absolute;
@@ -161,6 +163,10 @@ p {
 	font-size: 1em;
 	color: white;
 	border-style: none;
+	cursor: pointer;
+}
+.button-1:focus {
+	outline: none;
 }
 #about-us .button-1 {
 	margin: 0px 2px 0px 2px;
@@ -224,12 +230,16 @@ p {
 	font-size: 1.5em;
 	border-radius: 10px;
 	color: white;
+	cursor: pointer;
+}
+.button-2:focus {
+	outline: none;
 }
 #newsletter {
 	top: 150%;
     right: 10%;
-    background-color: var(--pal-yellow);
-	color: var(--pal-gray);
+    background-color: white;
+	color: black;
 	transform: translate(0, -50%);
 }
 #newsletter p {
@@ -239,7 +249,6 @@ p {
 	display: inline-block;
 	border-radius: 8px;
 	width: 300px;
-	background-color: red;
 	overflow: hidden;
 	height: 40px; 
 	-webkit-appearance: none;
@@ -252,8 +261,14 @@ p {
 	font-size: 1.3em;
 	font-family: 'Questrial', sans-serif;
 	margin: 0;
-	padding: 0;
+	padding: 0 10px;
 	position: absolute;
+	background: #EFEFEF;
+	transition: text 0.5s;
+}
+.newsletter-input:focus {
+	text-align: left;
+	outline: none;
 }
 #MERGE0 {
 	width: 250px;
@@ -263,38 +278,38 @@ p {
 	padding-top: 1px;
 	width: 50px;
 	right: 30px;
-	background-color: #17BEBB;
+	background-color: var(--pal-blue);
 	-webkit-appearance: none;
 	border-radius: 0 8px 8px 0;
 	cursor: pointer;
-	color: white;
+	color: var(--pal-lgray);
 }
 #newsletter-background {
 	position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0);
-	background: url("../images/adobeshelf.png");
-	top: 105%;
+	background: url("../images/adobel2.png");
+	top: 100%;
 	width: 100%;
 	height: 90%;
+	min-height: 100%;
 	background-repeat: no-repeat;
-	background-position: bottom left;
+	background-position: center;
 	background-size: cover;
 	z-index: 1;
+	
 }
 #nlg1 {
 	position: absolute;
 	z-index: 2;
 	width: 100%;
-	height: 5%;
+	height: 7%;
 	background: linear-gradient(180deg, white, rgba(0, 0, 0, 0));
-	top: 105%;
+	top: 0;
 }
 #nlg2 {
 	position: absolute;
-	top: 193%;
+	bottom: 0;
 	width: 100%;
-	height: 2%;
+	height: 20%;
 	z-index: 2;
 	background: linear-gradient(0deg, white, rgba(0, 0, 0, 0));
 }
@@ -337,15 +352,19 @@ p {
 	color: white;
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
+	margin-top: 0;
 }
 
 /* MOBILE RENDER: */
 @media only screen and (max-width: 680px) {
-	#slideshow {
+	/*#slideshow {
 		background: var(--topbackground-m);
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
+	}*/
+	#gradient {
+		display: none;
 	}
 	#mobile-banner {
 		display: none;
@@ -357,7 +376,10 @@ p {
 		top: 40%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		opacity: 0.9;
+		background: rgba(255, 255, 255, 0.6);
+		backdrop-filter: blur(2px);
+		-webkit-backdrop-filter: blur(2px);
+		text-shadow: 1px 1px 20px white;
 	}
 	#staff-select {
 		top: calc(40% + 20px);

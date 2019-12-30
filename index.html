@@ -128,11 +128,14 @@
 		</div>
 		<button class="button-2" onclick="hideStaffInfo()">&larr; Back</button>
 	</div>
-	<div id="nlg1"></div>
-	<div id="newsletter-background"></div>
-	<div id="nlg2"></div>
+	
+	<div id="newsletter-background">
+		<div id="nlg1"></div>
+		<div id="nlg2"></div>
+	</div>
+	
         <div id="newsletter" class="text-blob">
-            <h1>Sign up for our newsletter!</h1>
+            <h1>Sign up for our newsletter</h1>
             <p>Get seasonal planting tips, updates to our inventory and exclusive offers emailed direclty to you! We only email once or twice a month, and we won't give out your information.</p>
             <div class="newsletter-container">
 				<form action="https://evergreengardencenter.us17.list-manage.com/subscribe/post" method="POST">
@@ -162,7 +165,7 @@
 		</div>
 		
 		<div id="contact-us">
-			<h1>Contact us:</h1>
+			<h1>Contact us</h1>
 			<div id="contact-info">
 				<p>
 					Evergreen Garden Center Inc.<br />
@@ -171,11 +174,11 @@
 					<a href="tel:+15592993107">(559) 299-3107</a>
 				</p>
 			</div>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.9150712352202!2d-119.71576019999998!3d36.84451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80945cb9d9efdb59%3A0x7dbba950430e3ee3!2s210%20W%20Alluvial%20Ave%2C%20Clovis%2C%20CA%2093611!5e0!3m2!1sen!2sus!4v1577142702572!5m2!1sen!2sus" height="600" width="100%" frameborder="0" style="border:0; max-width: 1200px; margin-bottom: 100px;" allowfullscreen=""></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.9150712352202!2d-119.71576019999998!3d36.84451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80945cb9d9efdb59%3A0x7dbba950430e3ee3!2s210%20W%20Alluvial%20Ave%2C%20Clovis%2C%20CA%2093611!5e0!3m2!1sen!2sus!4v1577142702572!5m2!1sen!2sus" height="600" width="100%" frameborder="0" style="border:0; max-width: 1200px; margin-bottom: 0;" allowfullscreen=""></iframe>
 		</div>
 		<div id="footer">
 			&#9400; Evergreen Garden Center Inc. 2020<br />
-			<a href="https://cowin.dev" style="color: var(--pal-green); text-decoration: none;">Designed by Dalton Cowin</a>
+			<a href="https://cowin.dev" style="color: var(--pal-blue); text-decoration: none;">Designed by Dalton Cowin</a>
 		</div>
 	</div>
 	
@@ -209,6 +212,8 @@
 		let prevScrollPos = window.pageYOffset;
         
 		window.onscroll = function() {
+			
+			// navigation
 			let scrollPos = window.pageYOffset;
 			if (prevScrollPos > scrollPos || scrollPos <= 0) {
 				navProperties.transition = "opacity 0.4s ease-in, top 0.4s ease-out";
@@ -228,6 +233,8 @@
 				navButtonProperties.transform = "rotate(115deg)";
 			}
 			prevScrollPos = scrollPos;
+			
+			document.getElementById("gradient").style.opacity = (window.pageYOffset / 300) - 0.4;
 		}
 		
 		// nav-screen show/hide functions
