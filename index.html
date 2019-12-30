@@ -35,14 +35,13 @@
 	</div>
 	<div id="background-shader" onclick="closeMenu();"></div>
 	
-    <!--<div class="background" id="hero2"></div>-->
 	<div id="mobile-banner">
 		<img src="images/gradyLogo.png" alt="Evergreen Garden Center" />
 	</div>
 	
 
 	<div id="about-us" class="text-blob">
-		<h1>Welcome to Evergreen!</h1>
+		<h1>Welcome to Evergreen</h1>
 		<p>Evergreen Garden Center has been doing business for over 30 years, specializing in roses, perennials and gifts. New lines of succulents, drought tolerant plants, pottery and iron trellises have completed our line. We also carry a full line of trees, shrubs, vegetables, chemicals and organic fertilizers.</p>
 		<div class="button-container">
 			<button class="button-1"><b>Our History</b></button>
@@ -52,23 +51,23 @@
 	
 	<!-- STAFF SECTION -->
 	<div id="staff-select">
-		<li style="color: var(--pal-red);" onclick="hideStaffMenu()">Back</li>
-		<li onclick="showStaffInfo(mike)">Mike Ravicchio</li>
-		<li onclick="showStaffInfo(bryan)">Bryan Ravicchio</li>
-		<li>Kat Ravicchio</li>
-		<li>Shana</li>
-		<li>Enrique Mendoza</li>
-		<li>John Harvill</li>
-		<li>June</li>
-		<li>Geoffrey Callow</li>
-		<li>Dalton Cowin</li>
-		<li>Ryan Hansen</li>
-		<li style="border-bottom: none;">William Vasquez</li>
+		<li style="color: white; background: var(--pal-red);" onclick="hideStaffMenu()">&larr; Back</li>
+		<li onclick="showStaffInfo('staff1')">Mike Ravicchio</li>
+		<li onclick="showStaffInfo('staff2')">Bryan Ravicchio</li>
+		<li onclick="showStaffInfo('staff3')">Kat Ravicchio</li>
+		<li onclick="showStaffInfo('staff4')">Shana</li>
+		<li onclick="showStaffInfo('staff5')">Enrique Mendoza</li>
+		<li onclick="showStaffInfo('staff6')">John Harvill</li>
+		<li onclick="showStaffInfo('staff7')">June DeBacker</li>
+		<li onclick="showStaffInfo('staff8')">Geoffrey Callow</li>
+		<li onclick="showStaffInfo('staff9')">Dalton Cowin</li>
+		<li onclick="showStaffInfo('staff10')">Ryan Hansen</li>
+		<li style="border-bottom: none;" onclick="showStaffInfo('staff11')">William Vasquez</li>
 	</div>
 	<div id="staff-info">
-		<button class="button-2" onclick="hideStaffInfo()">Close</button>
-		<div id="mike" style="display: none;">
+		<div id="staff1" class="staffms">
 			<h1>Mike Ravicchio</h1>
+			<h2>Owner</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In hac habitasse platea dictumst. Congue eu consequat ac felis donec et odio pellentesque. Nulla at volutpat diam ut venenatis tellus in metus vulputate. In nibh mauris cursus mattis. Tristique senectus et netus et malesuada fames. Lacus vel facilisis volutpat est velit egestas dui. Magna sit amet purus gravida. Dui accumsan sit amet nulla facilisi morbi tempus iaculis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Dolor purus non enim praesent elementum facilisis leo vel fringilla. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Pretium aenean pharetra magna ac. Sed velit dignissim sodales ut eu.<br/><br/>
 
 			Imperdiet nulla malesuada pellentesque elit eget gravida cum. Purus sit amet luctus venenatis lectus magna fringilla urna. Turpis tincidunt id aliquet risus feugiat in. Nunc pulvinar sapien et ligula. Quam id leo in vitae turpis massa sed elementum. Id venenatis a condimentum vitae sapien pellentesque habitant. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Fusce ut placerat orci nulla pellentesque. Nunc id cursus metus aliquam. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi. Eget nunc scelerisque viverra mauris in aliquam sem. Ultrices gravida dictum fusce ut. Volutpat est velit egestas dui id ornare arcu odio. Sem fringilla ut morbi tincidunt augue interdum. Quis hendrerit dolor magna eget est lorem ipsum. Augue mauris augue neque gravida in. Mollis nunc sed id semper.<br /><br/>
@@ -79,7 +78,7 @@
 
 			Nullam vehicula ipsum a arcu cursus vitae congue mauris. Faucibus ornare suspendisse sed nisi lacus sed. Id semper risus in hendrerit gravida rutrum quisque non. Justo nec ultrices dui sapien eget. Nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Nibh cras pulvinar mattis nunc sed. Nulla pellentesque dignissim enim sit amet. Sit amet cursus sit amet dictum sit. Nec nam aliquam sem et tortor consequat id porta. Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed. Neque egestas congue quisque egestas diam in arcu. Arcu dictum varius duis at consectetur lorem donec. Facilisis mauris sit amet massa vitae. Pellentesque eu tincidunt tortor aliquam nulla. Netus et malesuada fames ac turpis egestas sed.</p>
 		</div>
-		<div id="bryan" style="display: none;">
+		<div id="staff2" class="staffms">
 			<h1>Bryan Ravicchio</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In hac habitasse platea dictumst. Congue eu consequat ac felis donec et odio pellentesque. Nulla at volutpat diam ut venenatis tellus in metus vulputate. In nibh mauris cursus mattis. Tristique senectus et netus et malesuada fames. Lacus vel facilisis volutpat est velit egestas dui. Magna sit amet purus gravida. Dui accumsan sit amet nulla facilisi morbi tempus iaculis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Dolor purus non enim praesent elementum facilisis leo vel fringilla. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Pretium aenean pharetra magna ac. Sed velit dignissim sodales ut eu.<br/><br/>
 
@@ -91,7 +90,47 @@
 
 			Nullam vehicula ipsum a arcu cursus vitae congue mauris. Faucibus ornare suspendisse sed nisi lacus sed. Id semper risus in hendrerit gravida rutrum quisque non. Justo nec ultrices dui sapien eget. Nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Nibh cras pulvinar mattis nunc sed. Nulla pellentesque dignissim enim sit amet. Sit amet cursus sit amet dictum sit. Nec nam aliquam sem et tortor consequat id porta. Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed. Neque egestas congue quisque egestas diam in arcu. Arcu dictum varius duis at consectetur lorem donec. Facilisis mauris sit amet massa vitae. Pellentesque eu tincidunt tortor aliquam nulla. Netus et malesuada fames ac turpis egestas sed.</p>
 		</div>
+		<div id="staff3" class="staffms">
+			<h1>Kat Ravicchio</h1>
+		</div>
+		<div id="staff4" class="staffms">
+			<h1>Shana</h1>
+			<h2>Sales Associate</h2>
+		</div>
+		<div id="staff5" class="staffms">
+			<h1>Enrique Mendoza</h1>
+			<h2>Sales Associate, Designer</h2>
+		</div>
+		<div id="staff6" class="staffms">
+			<h1>John Harvill</h1>
+			<h2>Sales Associate</h2>
+		</div>
+		<div id="staff7" class="staffms">
+			<h1>June DeBacker</h1>
+			<h2>Sales Associate</h2>
+		</div>
+		<div id="staff8" class="staffms">
+			<h1>Geoff Callow</h1>
+			<h2>Sales Associate</h2>
+		</div>
+		<div id="staff9" class="staffms">
+			<h1>Dalton Cowin</h1>
+			<h2>Loader, Webmaster</h2>
+			<p>If you experience any bugs or issues with our website, please notify me at <a href="mailto:dalton@cowin.dev">dalton@cowin.dev</a></p>
+		</div>
+		<div id="staff10" class="staffms">
+			<h1>Ryan Hansen</h1>
+			<h2>Loader</h2>
+		</div>
+		<div id="staff11" class="staffms">
+			<h1>William Vasquez</h1>
+			<h2>Loader</h2>
+		</div>
+		<button class="button-2" onclick="hideStaffInfo()">&larr; Back</button>
 	</div>
+	<div id="nlg1"></div>
+	<div id="newsletter-background"></div>
+	<div id="nlg2"></div>
         <div id="newsletter" class="text-blob">
             <h1>Sign up for our newsletter!</h1>
             <p>Get seasonal planting tips, updates to our inventory and exclusive offers emailed direclty to you! We only email once or twice a month, and we won't give out your information.</p>
@@ -108,7 +147,7 @@
 	<div class="page-content">
 		
 		<div id="social-media">
-			<h1>Find us online!</h1>
+			<h1>Find us online</h1>
 			<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/f6bc76597e7e5bdfaf996b08dd3df084.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; max-width: 1200px; border: 0; overflow: hidden;"></iframe>
 			<!-- Google Reviews Widget (Elfsight) -->
 			<div style="margin: 20px; font-family: 'Questrial, sans-serif;'">
@@ -126,15 +165,18 @@
 			<h1>Contact us:</h1>
 			<div id="contact-info">
 				<p>
-					Evergreen Garden Center<br />
+					Evergreen Garden Center Inc.<br />
 					210 W. Alluvial Ave, Clovis, CA 93611 <br />
 					<a href="mailto:mike@evergreenclovis.com">mike@evergreenclovis.com</a><br />
 					<a href="tel:+15592993107">(559) 299-3107</a>
 				</p>
 			</div>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.9150712352202!2d-119.71576019999998!3d36.84451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80945cb9d9efdb59%3A0x7dbba950430e3ee3!2s210%20W%20Alluvial%20Ave%2C%20Clovis%2C%20CA%2093611!5e0!3m2!1sen!2sus!4v1577142702572!5m2!1sen!2sus" height="600" width="100%" frameborder="0" style="border:0; max-width: 1000px; margin-bottom: 100px;" allowfullscreen=""></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.9150712352202!2d-119.71576019999998!3d36.84451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80945cb9d9efdb59%3A0x7dbba950430e3ee3!2s210%20W%20Alluvial%20Ave%2C%20Clovis%2C%20CA%2093611!5e0!3m2!1sen!2sus!4v1577142702572!5m2!1sen!2sus" height="600" width="100%" frameborder="0" style="border:0; max-width: 1200px; margin-bottom: 100px;" allowfullscreen=""></iframe>
 		</div>
-		
+		<div id="footer">
+			&#9400; Evergreen Garden Center Inc. 2020<br />
+			<a href="https://cowin.dev" style="color: var(--pal-green); text-decoration: none;">Designed by Dalton Cowin</a>
+		</div>
 	</div>
 	
 	<!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -211,7 +253,7 @@
 		cssvar = document.documentElement.style;
 		// staff show/hide functions
 		function showStaffMenu() { // show staff scroller
-			cssvar.setProperty('--staffselect-d', '15%');
+			cssvar.setProperty('--staffselect-d', 'calc(10% + 40px)');
 			cssvar.setProperty('--staffselect-m', '50%');
 			aboutUs.filter = "brightness(0.85)";
 			staffMenu.pointerEvents = "auto";
@@ -222,20 +264,27 @@
 			aboutUs.filter = "brightness(1)";
 			staffMenu.pointerEvents = "none";
 		}
-		function showStaffInfo(member) { // show staff-info
+		function showStaffInfo(staffm) { // show staff-info
 			aboutUs.filter = "brightness(0.7)";
 			staffMenu.filter = "brightness(0.85)";
-			cssvar.setProperty('--staffinfo-d', '20%');
+			staffMenu.pointerEvents = "none";
+			cssvar.setProperty('--staffinfo-d', 'calc(10% + 80px)');
 			cssvar.setProperty('--staffinfo-m', '50%');
 			staffInfo.pointerEvents = "auto";
 			// to-do: make staff bios dynamically show/hide
+			document.getElementById(staffm).style.display = "inline";
 		}
 		function hideStaffInfo() {
+			cssvar.setProperty('--topbackground-d', 'var(--default-top-background)');
 			aboutUs.filter = "brightness(0.85)";
 			staffMenu.filter = "brightness(1)";
+			staffMenu.pointerEvents = "auto";
 			cssvar.setProperty('--staffinfo-d', '-55%');
 			cssvar.setProperty('--staffinfo-m', '-50%');
 			staffInfo.pointerEvents = "none";
+			for (var i = 1; i <= 11; i++) {
+				document.getElementById("staff"+i).style.display = "none";
+			}
 		}
 	</script>
 </body>
