@@ -252,8 +252,7 @@
 			navShade.opacity = "0";
 			navShade.pointerEvents = "none";
 		}
-	</script>
-	<script>
+		
 		aboutUs = document.getElementById("about-us").style;
 		staffMenu = document.getElementById("staff-select").style;
 		staffInfo = document.getElementById("staff-info").style;
@@ -293,6 +292,14 @@
 				document.getElementById("staff"+i).style.display = "none";
 			}
 		}
+		emailInput = document.getElementById("MERGE0");
+		// email input placeholder focus switch
+		emailInput.addEventListener('focus', function() {
+			emailInput.setAttribute('placeholder', 'Enter your email')
+		})
+		emailInput.addEventListener('blur', function() {
+			emailInput.setAttribute('placeholder', 'Sign me up!')
+		})
 	</script>
 </body>
 </html>

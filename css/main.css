@@ -261,14 +261,16 @@ p {
 	font-size: 1.3em;
 	font-family: 'Questrial', sans-serif;
 	margin: 0;
-	padding: 0 10px;
+	padding: 0 5px;
 	position: absolute;
 	background: #EFEFEF;
 	transition: text 0.5s;
+	cursor: pointer;
 }
 .newsletter-input:focus {
 	text-align: left;
 	outline: none;
+	cursor: auto;
 }
 #MERGE0 {
 	width: 250px;
