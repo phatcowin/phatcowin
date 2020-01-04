@@ -39,7 +39,7 @@ body {
 #slideshow {
 	will-change: background;
 	background-image: url("../images/hero/hero1.jpeg");
-	transition: background-image 1s ease-in-out;
+	transition: background-image 1.3s ease-in-out;
 	transform-style: preserve-3d;
 	-webkit-transform-style: preserve-3d;
 	backface-visibility: hidden;
