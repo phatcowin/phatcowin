@@ -13,7 +13,7 @@
 </head>
 	
 <body>
-	<div id="slideshow"></div><div id="slideLoad"></div>
+	<div id="slideLoad"></div><div id="slideshow"></div>
 	<div id="gradient"></div>
 	<div id="hero-bottom"></div>
     <div id="nav-bar">
@@ -44,14 +44,13 @@
 		<h1>Welcome to Evergreen</h1>
 		<p>Evergreen Garden Center has been doing business for over 30 years, specializing in roses, perennials and gifts. New lines of succulents, drought tolerant plants, pottery and iron trellises have completed our line. We also carry a full line of trees, shrubs, vegetables, chemicals and organic fertilizers.</p>
 		<div class="button-container">
-			<button class="button-1"><b>Our History</b></button>
+			<button class="button-1" onclick="history(1)"><b>Our History</b></button>
 			<button class="button-1" onclick="showStaffMenu()"><b>Our Staff</b></button>
 		</div>
 	</div>
-	
+	<div id="staff-back"><button onclick="staffBack()">&larr;Back</button></div>
 	<!-- STAFF SECTION -->
 	<div id="staff-select">
-		<li style="color: white; background: var(--pal-red);" onclick="hideStaffMenu()">&larr; Back</li>
 		<li onclick="showStaffInfo('staff1')">Mike Ravicchio</li>
 		<li onclick="showStaffInfo('staff2')">Bryan Ravicchio</li>
 		<li onclick="showStaffInfo('staff3')">Kat Ravicchio</li>
@@ -126,7 +125,6 @@
 			<h1>William Vasquez</h1>
 			<h2>Loader</h2>
 		</div>
-		<button class="button-2" onclick="hideStaffInfo()">&larr; Back</button>
 	</div>
 	
 	<div id="newsletter-background">
@@ -253,22 +251,49 @@
 			navShade.pointerEvents = "none";
 		}
 		
+		// hero funcitons
+		hero = document.getElementById("slideshow").style;
+		heroLoader = document.getElementById("slideLoad").style;
+		let imageCount = 2;
+		let histPage = 0;
+		let isGecko = getComputedStyle(document.body).getPropertyValue('--is-gecko');
+		function heroDefault() {
+			if (isGecko == 1) hero.backgroundImage = "url(images/hero/hero1.jpeg)";
+			else {
+				setInterval (function() {
+					if (histPage == 0) {
+						hero.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+						imageCount++;
+						if (imageCount > 9) imageCount = 1;
+						heroLoader.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+					}
+				}, 8000);
+			}
+		}
+		function history() {
+			if (histPage == 0) histPage = 1;
+			else histPage = 0;
+		}
+		heroDefault();
 		aboutUs = document.getElementById("about-us").style;
 		staffMenu = document.getElementById("staff-select").style;
 		staffInfo = document.getElementById("staff-info").style;
 		cssvar = document.documentElement.style;
+		let staffSentry = false; // true when staff info is open
 		// staff show/hide functions
 		function showStaffMenu() { // show staff scroller
-			cssvar.setProperty('--staffselect-d', 'calc(10% + 40px)');
+			cssvar.setProperty('--staffselect-d', 'calc(10% + 40)');
 			cssvar.setProperty('--staffselect-m', '50%');
 			aboutUs.filter = "brightness(0.85)";
 			staffMenu.pointerEvents = "auto";
+			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
 		}
 		function hideStaffMenu() {
 			cssvar.setProperty('--staffselect-d', '-55%');
 			cssvar.setProperty('--staffselect-m', '-50%');
 			aboutUs.filter = "brightness(1)";
 			staffMenu.pointerEvents = "none";
+			cssvar.setProperty('--staffBack-left-d', 'calc(-55% + 262px)');
 		}
 		function showStaffInfo(staffm) { // show staff-info
 			aboutUs.filter = "brightness(0.7)";
@@ -276,9 +301,11 @@
 			staffMenu.pointerEvents = "none";
 			cssvar.setProperty('--staffinfo-d', 'calc(10% + 80px)');
 			cssvar.setProperty('--staffinfo-m', '50%');
+			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 341px)');
 			staffInfo.pointerEvents = "auto";
 			// to-do: make staff bios dynamically show/hide
 			document.getElementById(staffm).style.display = "inline";
+			staffSentry = true;
 		}
 		function hideStaffInfo() {
 			cssvar.setProperty('--topbackground-d', 'var(--default-top-background)');
@@ -287,10 +314,16 @@
 			staffMenu.pointerEvents = "auto";
 			cssvar.setProperty('--staffinfo-d', '-55%');
 			cssvar.setProperty('--staffinfo-m', '-50%');
+			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
 			staffInfo.pointerEvents = "none";
 			for (var i = 1; i <= 11; i++) {
 				document.getElementById("staff"+i).style.display = "none";
 			}
+			staffSentry = false;
+		}
+		function staffBack() {
+			if (staffSentry == true) hideStaffInfo();
+			else hideStaffMenu();
 		}
 		emailInput = document.getElementById("MERGE0");
 		// email input placeholder focus switch
