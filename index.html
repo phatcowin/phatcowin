@@ -1,3 +1,18 @@
+<!--
+TO DO:
+	FIRST PUBLISH:
+	• Fix staff-back on mobile
+	• Stack opacity on filter effect on about-us/staff-select
+	• Add transparency to staff cards on mobile
+	• Program our-history
+	• Add staff bios
+	• Change hero-bottom from .png to .svg
+	
+	FUTURE RELEASE:
+	• Start/implement plant descriptions
+	• Add inventory system
+
+-->
 <!doctype html>
 <html>
 <head>
@@ -54,7 +69,7 @@
 		<li onclick="showStaffInfo('staff1')">Mike Ravicchio</li>
 		<li onclick="showStaffInfo('staff2')">Bryan Ravicchio</li>
 		<li onclick="showStaffInfo('staff3')">Kat Ravicchio</li>
-		<li onclick="showStaffInfo('staff4')">Shana</li>
+		<li onclick="showStaffInfo('staff4')">Shana Matteucci</li>
 		<li onclick="showStaffInfo('staff5')">Enrique Mendoza</li>
 		<li onclick="showStaffInfo('staff6')">John Harvill</li>
 		<li onclick="showStaffInfo('staff7')">June DeBacker</li>
@@ -176,7 +191,7 @@
 		</div>
 		<div id="footer">
 			&#9400; Evergreen Garden Center Inc. 2020<br />
-			<a href="https://cowin.dev" style="color: var(--pal-blue); text-decoration: none;">Designed by Dalton Cowin</a>
+			<a style="color: var(--pal-blue); text-decoration: none;">Designed by Dalton Cowin</a>
 		</div>
 	</div>
 	
@@ -267,7 +282,7 @@
 						if (imageCount > 9) imageCount = 1;
 						heroLoader.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
 					}
-				}, 8000);
+				}, 9000);
 			}
 		}
 		function history() {

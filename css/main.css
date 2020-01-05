@@ -15,8 +15,8 @@
 	--staffinfo-d: -55%;
 	--staffinfo-m: -50%;
 	--staffBack-left-d: calc(-55% + 301px);
-	--staffBack-top-m: 0;
-	--staffBack-left-m: 0;
+	--staffBack-top-m: -50%;
+	--staffBack-left-m: -50%;
 	
 	/* BACKGROUNDS */
 	--default-top-background: url("../images/hero/hero9.jpeg");

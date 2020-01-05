@@ -1,0 +1,118 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Raleway:400,600&display=swap');
+/* CSS Document */
+:root {
+	/* PALETTE */
+	--pal-red: #E4572E;
+	--pal-blue: #17BEBB;
+	--pal-yellow: #FFC914;
+	--pal-green: #4AAD52;
+	--pal-gray: #2E282A;
+	--pal-lgray: #EFEFEF;
+}
+body {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+#background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, red, blue);
+}
+#img {
+	width: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: 30px;
+	transform: translate(-85%, -50%);
+	border-radius: 10px;
+	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
+}
+#box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-15%, -50%);
+	background: rgba(255, 255, 255, 0.7);
+	padding: 30px;
+	color: black;
+	text-align: center;
+	max-width: 500px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
+}
+@supports ((backdrop-filter:blur(8px)) or (-webkit-backdrop-filter:blur(8px))) {
+	#box {
+		backdrop-filter: blur(15px);
+		-webkit-backdrop-filter: blur(15px);
+	}
+}
+h1 {
+	font-size: 4.5em;
+	font-family: 'Montserrat', sans-serif;
+	color: var(--pal-red);
+	font-weight: 600;
+	margin: 0;
+}
+p {
+	font-size: 1.3em;
+	font-family: 'Raleway', sans-serif;
+	line-height: 1.4em;
+}
+.button {
+	border: none;
+	background: var(--pal-red);
+	border-radius: 5px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 1.1em;
+	padding: 20px;
+	color: white;
+	margin: 10px 0 0 0;
+	font-weight: 600;
+	cursor: pointer;
+}
+.button:focus {
+	outline: none;
+}
+@media only screen and (max-width: 790px) {
+	#img {
+		display: none;
+	}
+	#background {
+		background: url(../images/duke.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	#box {
+		top: 0px;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 80%;
+		padding: 20px;
+		max-width: 98%;
+		margin: 10px 0 0 0;
+		background: rgba(255, 255, 255, 0.5);
+	}
+	@supports ((backdrop-filter:blur(8px)) or (-webkit-backdrop-filter: blur(8px))) {
+		#box {	
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+		}
+	}
+	h1 {
+		margin: 0 0 10px;
+		font-size: 3.6em;
+		font-weight: 600;
+	}
+	p {
+		font-weight: 400;
+		margin: 0 0 10px 0;
+	}
+}
