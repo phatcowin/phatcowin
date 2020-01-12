@@ -10,13 +10,13 @@
         <link rel="stylesheet" href="https://use.typekit.net/mmr0gck.css">
 		<link rel="icon" href="resources/images/favicon.png" type="image/x-icon">
 		
-		<!-- Unity -->
+		<!-- Unity --> <!--
 		<link rel="stylesheet" href="TemplateData/style.css">
 		<script src="TemplateData/UnityProgress.js"></script>
 		<script src="Build/UnityLoader.js"></script>
 		<script>
 			var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Satan Is My Motor.json", {onProgress: UnityProgress});
-		</script>
+		</script> -->
 	</head>
 	<body>
 		<h3 id="end-game" onclick="openMenu();">Back to website</h3>
@@ -28,11 +28,11 @@
 				<h1>Hey, I'm Ethan.</h1>
 				<h2>I make games.</h2>
 			</div>
-			<h3 onclick="changeGradient('blue', 'green')">view my projects</h3>
+			<h3 onclick="changeGradient('var(--gradient-projects)');">view my projects</h3>
 			<h3>contact me</h3>
 			<a onclick="closeMenu()"><h3>play game</h3></a>
 		</div>
-		<!--add this code where you want the game to load-->
+		<!--add this code where you want the game to load--> <!--
 		<div class="webgl-content">
 			<div id="gameContainer" style="width: 960px; height: 600px"></div>
 			<div class="footer">
@@ -40,28 +40,33 @@
 				<div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
 				<div class="title">Satan is My Motor</div>
 			</div>
-		</div>
-		<!--add this code above the '</body>' tag on your site-->
-
+		</div> -->
 		<script>
+			cssvar = document.documentElement.style; // .setProperty('cssvariable', 'value');
 			function closeMenu() {
-				document.getElementById("gradient1").style.opacity = "0";
-				document.getElementById("grayscale").style.opacity = "0";
-				document.getElementById("grayscale").style.pointerEvents = "none";
-				document.getElementById("landing-menu").style.opacity = "0";
-				document.getElementById("landing-menu").style.pointerEvents = "none";
-				document.getElementById("end-game").style.opacity = "1";
+				document.getElementById("gradient1").style.opacity = '0';
+				document.getElementById("grayscale").style.opacity = '0';
+				document.getElementById("grayscale").style.pointerEvents = 'none';
+				document.getElementById("landing-menu").style.opacity = '0';
+				document.getElementById("landing-menu").style.pointerEvents = 'none';
+				document.getElementById("end-game").style.opacity = '1';
 			}
 			function openMenu() {
-				document.getElementById("gradient1").style.opacity = "0.85";
-				document.getElementById("grayscale").style.opacity = "1";
-				document.getElementById("grayscale").style.pointerEvents = "all";
-				document.getElementById("landing-menu").style.opacity = "1";
-				document.getElementById("landing-menu").style.pointerEvents = "auto";
-				document.getElementById("end-game").style.opacity = "0";
+				document.getElementById("gradient1").style.opacity = '0.85';
+				document.getElementById("grayscale").style.opacity = '1';
+				document.getElementById("grayscale").style.pointerEvents = 'all';
+				document.getElementById("landing-menu").style.opacity = '1';
+				document.getElementById("landing-menu").style.pointerEvents = 'auto';
+				document.getElementById("end-game").style.opacity = '0';
 			}
-			function changeGradient(c1, c2) {
-				document.getElementById("gradient").style.background = "linear-gradient(45deg, "+c1+", "+c2+")";
+			function changeGradient(newSetting) {
+				cssvar.setProperty('--gradient-transition', newSetting);
+				document.getElementById("gradient2").style.opacity =  '0.85';
+				document.getElementById("gradient1").style.opacity = '0';
+				setTimeout(function() {
+					cssvar.setProperty('--gradient', newSetting);
+					document.getElementById("gradient1").style.opacity = '0.85';
+				}, 500)
 			}
 		</script>
 	</body>
