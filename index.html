@@ -3,8 +3,6 @@
 TO DO:
 	FIRST PUBLISH:
 	• Fix staff-back on mobile
-	• Stack opacity on filter effect on about-us/staff-select
-	• Add transparency to staff cards on mobile
 	• Program our-history
 	• Add staff bios
 	
@@ -27,7 +25,30 @@ TO DO:
 </head>
 	
 <body>
-	<div id="slideLoad"></div><div id="slideshow"></div>
+	<div style="display:none;opacity:0;">
+		<img alt="" src="images/hero/hero1.jpeg">
+		<img alt="" src="images/history/history1.png">
+		<img alt="" src="images/history/history2.png">
+		<img alt="" src="images/history/history3.png">
+		<img alt="" src="images/history/history4.png">
+		<img alt="" src="images/history/history5.png">		
+		<img alt="" src="images/hero/hero2.jpeg">
+		<img alt="" src="images/hero/hero3.jpeg">
+		<img alt="" src="images/hero/hero4.jpeg">
+		<img alt="" src="images/hero/hero5.jpeg">
+		<img alt="" src="images/hero/hero6.jpeg">
+		<img alt="" src="images/hero/hero7.jpeg">
+		<img alt="" src="images/hero/hero8.jpeg">
+		<img alt="" src="images/hero/hero9.jpeg">
+	</div>
+	<div id="history-viewer">
+		<div class="history-content">
+			<p>Mike Ravicchio began Evergreen Garden Center in 1986. His mom, Dyan Golick, joined him as his business partner and bookkeeper </p>
+		</div>
+		<button class="history-button" id="history-back" onclick="history('previous')">Back</button>
+		<button class="history-button" id="history-next" onclick="history('next')">Next</button>
+	</div>
+	<div id="slideshow"></div>
 	<div id="gradient"></div>
 	<img id="hero-bottom" src="images/SVG/heroBottom.svg" width="100%" alt="">
     <div id="nav-bar">
@@ -58,7 +79,7 @@ TO DO:
 		<h1>Welcome to Evergreen</h1>
 		<p>Evergreen Garden Center has been doing business for over 30 years, specializing in roses, perennials and gifts. New lines of succulents, drought tolerant plants, pottery and iron trellises have completed our line. We also carry a full line of trees, shrubs, vegetables, chemicals and organic fertilizers.</p>
 		<div class="button-container">
-			<button class="button-1" onclick="history(1)"><b>Our History</b></button>
+			<button class="button-1" onclick="history('next');"><b>Our History</b></button>
 			<button class="button-1" onclick="showStaffMenu()"><b>Our Staff</b></button>
 		</div>
 	</div>
@@ -218,6 +239,8 @@ TO DO:
   		firebase.analytics();
 	</script>
 	<script>
+		cssvar = document.documentElement.style;
+		
         // nav-bar/nav-button auto-hide
 		navProperties = document.getElementById("nav-bar").style;
 		navButtonProperties = document.getElementById("nav-button").style;
@@ -267,32 +290,49 @@ TO DO:
 		
 		// hero funcitons
 		hero = document.getElementById("slideshow").style;
-		heroLoader = document.getElementById("slideLoad").style;
+		historyViewer = document.getElementById("history-viewer").style;
 		let imageCount = 2;
 		let histPage = 0;
 		let isGecko = getComputedStyle(document.body).getPropertyValue('--is-gecko');
+		
 		function heroDefault() {
 			if (isGecko == 1) hero.backgroundImage = "url(images/hero/hero1.jpeg)";
 			else {
 				setInterval (function() {
-					if (histPage == 0) {
-						hero.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-						imageCount++;
-						if (imageCount > 9) imageCount = 1;
-						heroLoader.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-					}
-				}, 9000);
+					hero.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+					imageCount++;
+					if (imageCount > 9) imageCount = 1;
+				}, 7000);
 			}
 		}
-		function history() {
-			if (histPage == 0) histPage = 1;
-			else histPage = 0;
-		}
 		heroDefault();
+		
+		function history(delta) {
+			if (delta == 'next') histPage++;
+			if (delta == 'previous') histPage--;
+			if (delta == 'home') histPage = 0;
+			if (histPage > 5) histPage = 5;
+			if (histPage < 0) histPage = 0;
+			if (histPage > 0) viewHistory('1');
+			else viewHistory('0');
+		}
+		
+		function viewHistory(historyBool) {
+			historyViewer.backgroundImage = "url(images/history/history"+histPage+".png)";
+			historyViewer.opacity = historyBool;
+			if (historyBool == '1') {
+				cssvar.setProperty('--aboutus-d', '-55%');
+				cssvar.setProperty('--aboutus-m', '-50%');
+			}
+			else {
+				cssvar.setProperty('--aboutus-d', '10%');
+				cssvar.setProperty('--aboutus-m', '50%');
+			}
+		}
+
 		aboutUs = document.getElementById("about-us").style;
 		staffMenu = document.getElementById("staff-select").style;
 		staffInfo = document.getElementById("staff-info").style;
-		cssvar = document.documentElement.style;
 		let staffSentry = false; // true when staff info is open
 		// staff show/hide functions
 		function showStaffMenu() { // show staff scroller

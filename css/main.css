@@ -21,7 +21,9 @@ nobel
 	--pal-gray: #2E282A;
 	--pal-lgray: #EFEFEF;
 	
-	/* STAFF CARDS */
+	/* CARDS */
+	--aboutus-d: 10%;
+	--aboutus-m: 50%;
 	--staffselect-d: -55%;
 	--staffselect-m: -50%;
 	--staffinfo-d: -55%;
@@ -39,12 +41,14 @@ nobel
 	--gradient-opacity: 0;
 	
 	/* FONTS */
-	--header: nobel, sans-serif;
-	--header-weight: 100;
+	--header: forma-djr-text, sans-serif;
+	--header-weight: 700;
 	--header-style: normal;
-	--body-text: nobel, sans-serif;
+	
+	--body-text: forma-djr-text, sans-serif;
 	--body-weight: 400;
 	--body-style: normal;
+	
 	--font-size-p: 1em;
 	--nav-fsize: 1em;
 }
@@ -59,7 +63,7 @@ body {
 	width: 100%;
 }
 #slideshow {
-	will-change: background;
+	will-change: background-image;
 	background-image: url("../images/hero/hero1.jpeg");
 	transition: background-image 1.3s ease-in-out;
 	transform-style: preserve-3d;
@@ -76,7 +80,7 @@ body {
 }
 #gradient {
 	will-change: opacity;
-	z-index: 2;
+	z-index: 3;
 	opacity: 0;
 	position: absolute;
 	width: 100%;
@@ -90,11 +94,26 @@ body {
 	position: absolute;
 	width: 100%;
 	bottom: 0;
-	z-index: 3;
+	z-index: 4;
 }
-#slideLoad {
-    display: none;
-	background-image: url("../images/hero/hero2.jpeg");
+#history-viewer {
+	will-change: background-image, opacity;
+	transition: opacity 1.3s ease-in-out, background-image 1.3s ease-in-out;
+    opacity: 0;
+	background-image: url("../images/history/history1.png");
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	z-index: 3;
 }
 .background {
 	position: absolute;
@@ -167,13 +186,39 @@ p {
 }
 #about-us {
     top: 25%;
-    left: 10%;
+    left: var(--aboutus-d);
     background: white;
 	color: black;
 	filter: brightness(1);
 	transition: top 0.4s, left 0.4s, opacity 0.5s ease-in, filter 0.4s;
 	z-index: 4;
 	opacity: var(--about-us-opacity);
+}
+.history-content {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+	font-family: var(--body-text);
+	font-weight: var(--body-weight);
+	font-style: var(--body-style);
+}
+.history-button {
+	border: none;
+	background: var(--pal-gray);
+	color: white;
+	cursor: pointer;
+	z-index: 5;
+	position: absolute;
+}
+#history-back {
+	bottom: 40px;
+	left: 20%;
+}
+#history-next {
+	bottom: 40px;
+	right: 20%;
 }
 #about-us p {
 	padding-bottom: 10px;
@@ -427,7 +472,7 @@ p {
 	}
 	#about-us {
 		top: 40%;
-		left: 50%;
+		left: var(--aboutus-m);
 		transform: translate(-50%, -50%);
 		background: rgba(255, 255, 255, 0.6);
 		backdrop-filter: blur(2px);
