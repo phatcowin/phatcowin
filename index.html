@@ -19,18 +19,45 @@
 		</script> -->
 	</head>
 	<body>
-		<h3 id="end-game" onclick="openMenu();">Back to website</h3>
+		<h3 id="end-game" onclick="openMenu();">Main menu</h3>
 		<div id="grayscale"></div>
 		<div class="gradient" id="gradient1"></div>
 		<div class="gradient" id="gradient2"></div>
+		
+		<!-- MAIN MENU -->
 		<div id="landing-menu">
-			<div id="title-box">
+			<div class="title-box" style="width:620px;">
 				<h1>Hey, I'm Ethan.</h1>
 				<h2>I make games.</h2>
 			</div>
-			<h3 onclick="changeGradient('var(--gradient-projects)');">view my projects</h3>
+			<h3 onclick="viewProjects()">view my projects</h3>
 			<h3>contact me</h3>
 			<a onclick="closeMenu()"><h3>play game</h3></a>
+		</div>
+		
+		<!-- PROJECTS MENU -->
+		<div id="projects-menu">
+			<div style="position:relative; top:50%; transform:translate(0,-50%);">
+			<div class="title-box" style="width:205px;">
+				<h2>Projects</h2>
+			</div>
+			<h3>ludicrous</h3>
+			<h3>zombie</h3>
+			<h3>capstone</h3>
+			<h3>balloon!</h3>
+			<h3>pong!</h3>
+			<br /><h3 onclick="viewMain();">back</h3>
+			</div>
+		</div>
+		
+		<!-- PROJECTS VIEWER -->
+		<div id="projects-viewer">
+			<div class="project" id="project-1">
+				<div class="title-box">
+					<h2>Project Ludicrous</h2>
+					<p>The second in my line of short demos, this was an idea that I’ve had for awhile, but I didn’t have the knowledge to build until after I graduated. It’s a driving game, where the car is constantly speeding up, and you have to dodge around obstacles until it reaches a certain speed and you win. There are a few quality of life features I’m still working on, but I think the idea is a clever one, and I’m proud to finally have a working prototype.</p>
+				</div>
+			</div>
 		</div>
 		<!--add this code where you want the game to load--> <!--
 		<div class="webgl-content">
@@ -67,6 +94,19 @@
 					cssvar.setProperty('--gradient', newSetting);
 					document.getElementById("gradient1").style.opacity = '0.85';
 				}, 500)
+			}
+			function viewProjects() {
+				changeGradient('var(--gradient-projects)');
+				document.getElementById("landing-menu").style.left = '100%';
+				document.getElementById("projects-menu").style.right = '10px';
+			}
+			function viewContact() {
+				
+			}
+			function viewMain() {
+				changeGradient('var(--gradient-main)');
+				document.getElementById("landing-menu").style.left = '10px';
+				document.getElementById("projects-menu").style.right = 'calc(100% + 1000px)';
 			}
 		</script>
 	</body>

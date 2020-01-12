@@ -74,6 +74,7 @@ body {
 	opacity: 0;
 }
 #landing-menu {
+	transition: left 1s, top 1s;
 	z-index: 1000;
 	position: absolute;
 	top: 50%;
@@ -81,14 +82,17 @@ body {
 	color: white;
 	transform: translate(0, -50%);
 }
-#landing-menu h3:hover {
+h3:hover {
 	color: yellow;
 	transition: color 1s;
 }
-#title-box {
+.title-box {
 	border: solid 1px white;
 	padding: 13px 20px 0px 20px;
 	transition: font-size 0.5s;
+}
+#main-title {
+	width: 620px;
 }
 #hero {
 	position: absolute;
@@ -119,6 +123,16 @@ h3 {
 	font-size: var(--p-size);
 	cursor: pointer;
 }
+#projects-menu {
+	position: absolute;
+	right: calc(100% + 1000px);
+	text-align: right;
+	color: white;
+	z-index: 999;
+	transition: right 1s, left 1s;
+	overflow-y: scroll;
+	height: 100%;
+}
 #nitrome_game_container {
 	position: absolute;
 	top: 50%;
@@ -127,6 +141,7 @@ h3 {
 }
 @media only screen and (max-width: 680px) {
 	#title-box {
+		width: 100%;
 		font-size: 0.5em;
 	}
 }
