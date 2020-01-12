@@ -44,7 +44,7 @@
 	text-align: center;
 	padding: 30px 35px 35px 35px;
 	text-decoration: none;
-	font-family: 'Questrial', sans-serif;
+	font-family: var(--header);
 	font-size: 1.5em;
 	color: rgb(0, 130, 255);
 	cursor: pointer;
@@ -116,11 +116,12 @@
 #nav-bar li a {
     display: block;
     text-align: center;
-    padding: 35px 13px;
+    padding: 35px 8px;
     text-decoration: none;
-    font-family: 'Questrial', sans-serif;
+    font-family: var(--body-text);
     transition: color 0.3s;
     color: black;
+	font-size: var(--nav-fsize);
 }
 #nav-bar li a:hover {
     color: var(--pal-green);

@@ -1,113 +1,359 @@
-<!DOCTYPE html>
-<html lang="en-us">
-	<head>
-        <meta charset="utf-8">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="theme-color" content="#2E282A" />
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <title>Ethan Andrew Portfolio</title>
-        <link rel="stylesheet" media="all" href="css/main.css">
-        <link rel="stylesheet" href="https://use.typekit.net/mmr0gck.css">
-		<link rel="icon" href="resources/images/favicon.png" type="image/x-icon">
+<!doctype html>
+<!--
+TO DO:
+	FIRST PUBLISH:
+	• Fix staff-back on mobile
+	• Stack opacity on filter effect on about-us/staff-select
+	• Add transparency to staff cards on mobile
+	• Program our-history
+	• Add staff bios
+	
+	FUTURE RELEASE:
+	• Start/implement plant descriptions
+	• Add inventory system
+
+-->
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="theme-color" content="#2E282A" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<title>Evergreen Garden Center</title>
+	<link href="/images/favicon.png" rel="icon" type="image/png" />
+	
+	<!-- CSS Stylesheets -->
+	<link href="css/main.css" rel="stylesheet" media="all" />
+	<link href="css/navbar.css" rel="stylesheet" media="all" />
+</head>
+	
+<body>
+	<div id="slideLoad"></div><div id="slideshow"></div>
+	<div id="gradient"></div>
+	<img id="hero-bottom" src="images/SVG/heroBottom.svg" width="100%" alt="">
+    <div id="nav-bar">
+        <a href=""><img src="images/gradyLogo.png" alt="Evergreen.png"></a>
+        <li><a href="#contact-us">Contact Us</a></li>
+        <li><a href="#social-media">Social Media</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+        <li><a href="#about-us">About Us</a></li>
+	</div>
+	
+	<div id="nav-button"><img src="images/hamburger.png" alt="E" onclick="openMenu()" /></div>
+	<div id="nav-screen">
+			<li style="border-radius: 20px 20px 0 0"><a href="#body" onclick="return closeMenu();" style>Home</a></li>
+			<li><a href="#about-us" onclick="return closeMenu();">About Us</a></li>
+			<li><a href="#newsletter" onclick="return closeMenu();">Newsletter</a></li>
+			<li><a href="#social-media" onclick="return closeMenu();">Social Media</a></li>
+			<li style="border-radius: 0 0 20px 20px; margin-bottom: 10px;"><a href="#contact-us" onclick="return closeMenu();">Contact Us</a></li>
+		<li style="border-radius: 20px"><a onclick="return closeMenu()"><b>Close</b></a></li>
+	</div>
+	<div id="background-shader" onclick="closeMenu();"></div>
+	
+	<div id="mobile-banner">
+		<img src="images/gradyLogo.png" alt="Evergreen Garden Center" />
+	</div>
+	
+
+	<div id="about-us" class="text-blob">
+		<h1>Welcome to Evergreen</h1>
+		<p>Evergreen Garden Center has been doing business for over 30 years, specializing in roses, perennials and gifts. New lines of succulents, drought tolerant plants, pottery and iron trellises have completed our line. We also carry a full line of trees, shrubs, vegetables, chemicals and organic fertilizers.</p>
+		<div class="button-container">
+			<button class="button-1" onclick="history(1)"><b>Our History</b></button>
+			<button class="button-1" onclick="showStaffMenu()"><b>Our Staff</b></button>
+		</div>
+	</div>
+	<div id="staff-back"><button onclick="staffBack()">&larr;Back</button></div>
+	<!-- STAFF SECTION -->
+	<div id="staff-select">
+		<li onclick="showStaffInfo('staff1')">Mike Ravicchio</li>
+		<li onclick="showStaffInfo('staff2')">Bryan Ravicchio</li>
+		<li onclick="showStaffInfo('staff3')">Kat Ravicchio</li>
+		<li onclick="showStaffInfo('staff4')">Shana Matteucci</li>
+		<li onclick="showStaffInfo('staff5')">Enrique Mendoza</li>
+		<li onclick="showStaffInfo('staff6')">John Harvill</li>
+		<li onclick="showStaffInfo('staff7')">June DeBacker</li>
+		<li onclick="showStaffInfo('staff8')">Geoffrey Callow</li>
+		<li onclick="showStaffInfo('staff9')">Dalton Cowin</li>
+		<li onclick="showStaffInfo('staff10')">Ryan Hansen</li>
+		<li style="border-bottom: none;" onclick="showStaffInfo('staff11')">William Vasquez</li>
+	</div>
+	<div id="staff-info">
+		<div id="staff1" class="staffms">
+			<h1>Mike Ravicchio</h1>
+			<h2>Owner</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In hac habitasse platea dictumst. Congue eu consequat ac felis donec et odio pellentesque. Nulla at volutpat diam ut venenatis tellus in metus vulputate. In nibh mauris cursus mattis. Tristique senectus et netus et malesuada fames. Lacus vel facilisis volutpat est velit egestas dui. Magna sit amet purus gravida. Dui accumsan sit amet nulla facilisi morbi tempus iaculis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Dolor purus non enim praesent elementum facilisis leo vel fringilla. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Pretium aenean pharetra magna ac. Sed velit dignissim sodales ut eu.<br/><br/>
+
+			Imperdiet nulla malesuada pellentesque elit eget gravida cum. Purus sit amet luctus venenatis lectus magna fringilla urna. Turpis tincidunt id aliquet risus feugiat in. Nunc pulvinar sapien et ligula. Quam id leo in vitae turpis massa sed elementum. Id venenatis a condimentum vitae sapien pellentesque habitant. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Fusce ut placerat orci nulla pellentesque. Nunc id cursus metus aliquam. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi. Eget nunc scelerisque viverra mauris in aliquam sem. Ultrices gravida dictum fusce ut. Volutpat est velit egestas dui id ornare arcu odio. Sem fringilla ut morbi tincidunt augue interdum. Quis hendrerit dolor magna eget est lorem ipsum. Augue mauris augue neque gravida in. Mollis nunc sed id semper.<br /><br/>
+
+			Congue nisi vitae suscipit tellus mauris a diam. Neque convallis a cras semper auctor neque vitae. Scelerisque eleifend donec pretium vulputate. Eu facilisis sed odio morbi quis. Mi proin sed libero enim sed. Amet venenatis urna cursus eget nunc scelerisque viverra. Phasellus egestas tellus rutrum tellus pellentesque. Amet mattis vulputate enim nulla aliquet. Urna nec tincidunt praesent semper. Sit amet nisl suscipit adipiscing bibendum. At risus viverra adipiscing at in. Praesent tristique magna sit amet purus gravida quis blandit turpis. Montes nascetur ridiculus mus mauris vitae. Eget nulla facilisi etiam dignissim diam quis enim. Cursus vitae congue mauris rhoncus aenean. Sit amet purus gravida quis blandit turpis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.<br /><br/>
+
+			Quis ipsum suspendisse ultrices gravida. Porta nibh venenatis cras sed felis eget. Morbi enim nunc faucibus a pellentesque sit amet porttitor. Scelerisque felis imperdiet proin fermentum leo vel orci porta non. Odio eu feugiat pretium nibh ipsum consequat nisl vel. Eu facilisis sed odio morbi quis. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu. Adipiscing at in tellus integer feugiat scelerisque varius morbi enim. Ullamcorper malesuada proin libero nunc consequat interdum. Ornare arcu dui vivamus arcu felis. Mauris augue neque gravida in fermentum et sollicitudin ac. Purus non enim praesent elementum. Feugiat in fermentum posuere urna. Cursus turpis massa tincidunt dui ut ornare lectus sit. Enim diam vulputate ut pharetra sit amet aliquam id diam. Nullam vehicula ipsum a arcu cursus. Ipsum consequat nisl vel pretium. Viverra adipiscing at in tellus integer feugiat scelerisque varius.<br /><br/>
+
+			Nullam vehicula ipsum a arcu cursus vitae congue mauris. Faucibus ornare suspendisse sed nisi lacus sed. Id semper risus in hendrerit gravida rutrum quisque non. Justo nec ultrices dui sapien eget. Nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Nibh cras pulvinar mattis nunc sed. Nulla pellentesque dignissim enim sit amet. Sit amet cursus sit amet dictum sit. Nec nam aliquam sem et tortor consequat id porta. Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed. Neque egestas congue quisque egestas diam in arcu. Arcu dictum varius duis at consectetur lorem donec. Facilisis mauris sit amet massa vitae. Pellentesque eu tincidunt tortor aliquam nulla. Netus et malesuada fames ac turpis egestas sed.</p>
+		</div>
+		<div id="staff2" class="staffms">
+			<h1>Bryan Ravicchio</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In hac habitasse platea dictumst. Congue eu consequat ac felis donec et odio pellentesque. Nulla at volutpat diam ut venenatis tellus in metus vulputate. In nibh mauris cursus mattis. Tristique senectus et netus et malesuada fames. Lacus vel facilisis volutpat est velit egestas dui. Magna sit amet purus gravida. Dui accumsan sit amet nulla facilisi morbi tempus iaculis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Dolor purus non enim praesent elementum facilisis leo vel fringilla. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Pretium aenean pharetra magna ac. Sed velit dignissim sodales ut eu.<br/><br/>
+
+			Imperdiet nulla malesuada pellentesque elit eget gravida cum. Purus sit amet luctus venenatis lectus magna fringilla urna. Turpis tincidunt id aliquet risus feugiat in. Nunc pulvinar sapien et ligula. Quam id leo in vitae turpis massa sed elementum. Id venenatis a condimentum vitae sapien pellentesque habitant. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Fusce ut placerat orci nulla pellentesque. Nunc id cursus metus aliquam. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi. Eget nunc scelerisque viverra mauris in aliquam sem. Ultrices gravida dictum fusce ut. Volutpat est velit egestas dui id ornare arcu odio. Sem fringilla ut morbi tincidunt augue interdum. Quis hendrerit dolor magna eget est lorem ipsum. Augue mauris augue neque gravida in. Mollis nunc sed id semper.<br /><br/>
+
+			Congue nisi vitae suscipit tellus mauris a diam. Neque convallis a cras semper auctor neque vitae. Scelerisque eleifend donec pretium vulputate. Eu facilisis sed odio morbi quis. Mi proin sed libero enim sed. Amet venenatis urna cursus eget nunc scelerisque viverra. Phasellus egestas tellus rutrum tellus pellentesque. Amet mattis vulputate enim nulla aliquet. Urna nec tincidunt praesent semper. Sit amet nisl suscipit adipiscing bibendum. At risus viverra adipiscing at in. Praesent tristique magna sit amet purus gravida quis blandit turpis. Montes nascetur ridiculus mus mauris vitae. Eget nulla facilisi etiam dignissim diam quis enim. Cursus vitae congue mauris rhoncus aenean. Sit amet purus gravida quis blandit turpis. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget.<br /><br/>
+
+			Quis ipsum suspendisse ultrices gravida. Porta nibh venenatis cras sed felis eget. Morbi enim nunc faucibus a pellentesque sit amet porttitor. Scelerisque felis imperdiet proin fermentum leo vel orci porta non. Odio eu feugiat pretium nibh ipsum consequat nisl vel. Eu facilisis sed odio morbi quis. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor eu. Adipiscing at in tellus integer feugiat scelerisque varius morbi enim. Ullamcorper malesuada proin libero nunc consequat interdum. Ornare arcu dui vivamus arcu felis. Mauris augue neque gravida in fermentum et sollicitudin ac. Purus non enim praesent elementum. Feugiat in fermentum posuere urna. Cursus turpis massa tincidunt dui ut ornare lectus sit. Enim diam vulputate ut pharetra sit amet aliquam id diam. Nullam vehicula ipsum a arcu cursus. Ipsum consequat nisl vel pretium. Viverra adipiscing at in tellus integer feugiat scelerisque varius.<br /><br/>
+
+			Nullam vehicula ipsum a arcu cursus vitae congue mauris. Faucibus ornare suspendisse sed nisi lacus sed. Id semper risus in hendrerit gravida rutrum quisque non. Justo nec ultrices dui sapien eget. Nisl condimentum id venenatis a condimentum vitae sapien pellentesque. Nibh cras pulvinar mattis nunc sed. Nulla pellentesque dignissim enim sit amet. Sit amet cursus sit amet dictum sit. Nec nam aliquam sem et tortor consequat id porta. Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed. Neque egestas congue quisque egestas diam in arcu. Arcu dictum varius duis at consectetur lorem donec. Facilisis mauris sit amet massa vitae. Pellentesque eu tincidunt tortor aliquam nulla. Netus et malesuada fames ac turpis egestas sed.</p>
+		</div>
+		<div id="staff3" class="staffms">
+			<h1>Kat Ravicchio</h1>
+		</div>
+		<div id="staff4" class="staffms">
+			<h1>Shana</h1>
+			<h2>Sales Associate</h2>
+		</div>
+		<div id="staff5" class="staffms">
+			<h1>Enrique Mendoza</h1>
+			<h2>Sales Associate, Designer</h2>
+		</div>
+		<div id="staff6" class="staffms">
+			<h1>John Harvill</h1>
+			<h2>Sales Associate</h2>
+		</div>
+		<div id="staff7" class="staffms">
+			<h1>June DeBacker</h1>
+			<h2>Sales Associate</h2>
+		</div>
+		<div id="staff8" class="staffms">
+			<h1>Geoff Callow</h1>
+			<h2>Sales Associate</h2>
+		</div>
+		<div id="staff9" class="staffms">
+			<h1>Dalton Cowin</h1>
+			<h2>Loader, Webmaster</h2>
+			<p>If you experience any bugs or issues with our website, please notify me at <a href="mailto:dalton@cowin.dev">dalton@cowin.dev</a></p>
+		</div>
+		<div id="staff10" class="staffms">
+			<h1>Ryan Hansen</h1>
+			<h2>Loader</h2>
+		</div>
+		<div id="staff11" class="staffms">
+			<h1>William Vasquez</h1>
+			<h2>Loader</h2>
+		</div>
+	</div>
+	
+	<div id="newsletter-background">
+		<div id="nlg1"></div>
+		<div id="nlg2"></div>
+	</div>
+	
+        <div id="newsletter" class="text-blob">
+            <h1>Sign up for our newsletter</h1>
+            <p>Get seasonal planting tips, updates to our inventory and exclusive offers emailed direclty to you! We only email once or twice a month, and we won't give out your information.</p>
+            <div class="newsletter-container">
+				<form action="https://evergreengardencenter.us17.list-manage.com/subscribe/post" method="POST">
+    				<input type="hidden" name="u" value="f88f0cf60aff4c379bde35b3a" />
+    				<input type="hidden" name="id" value="308d926502" />
+                	<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" class="newsletter-input" placeholder="Sign me up!"/>
+                	<input type="submit" id="submit" class="newsletter-input" value="&rarr;"/>
+				</form>
+            </div>
+        </div>
+	
+	<div class="page-content">
 		
-		<!-- Unity --> <!--
-		<link rel="stylesheet" href="TemplateData/style.css">
-		<script src="TemplateData/UnityProgress.js"></script>
-		<script src="Build/UnityLoader.js"></script>
-		<script>
-			var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Satan Is My Motor.json", {onProgress: UnityProgress});
-		</script> -->
-	</head>
-	<body>
-		<h3 id="end-game" onclick="openMenu();">Main menu</h3>
-		<div id="grayscale"></div>
-		<div class="gradient" id="gradient1"></div>
-		<div class="gradient" id="gradient2"></div>
-		
-		<!-- MAIN MENU -->
-		<div id="landing-menu">
-			<div class="title-box" style="width:620px;">
-				<h1>Hey, I'm Ethan.</h1>
-				<h2>I make games.</h2>
+		<div id="social-media">
+			<!-- Google Reviews Widget (Elfsight) -->
+			<div style="margin: 20px;">
+				<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+				<div class="elfsight-app-f103c561-27c2-4589-94e2-f983c0aaebad" style="font-family: var(--body-text); max-width: 1200px; position: relative; left: 50%; transform: translate(-50%, 0);"></div>
 			</div>
-			<h3 onclick="viewProjects()">view my projects</h3>
-			<h3>contact me</h3>
-			<a onclick="closeMenu()"><h3>play game</h3></a>
+			<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/f6bc76597e7e5bdfaf996b08dd3df084.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; max-width: 1200px; border: 0; overflow: hidden;"></iframe>
+
+			<div id="social-icons">
+				<a href="https://www.facebook.com/Evergreen-Garden-Center-182217145174726"><img class="social-icon" src="images/facebook.svg" alt="Facebook" /></a>
+				<a href="https://www.instagram.com/evergreengardencenter"><img class="social-icon" src="images/instagram.svg" alt="Instagram" /></a>
+				<a href="https://www.yelp.com/biz/evergreen-garden-center-clovis-2?osq=evergreen+garden+center"><img class="social-icon" src="images/yelp.svg" alt="Yelp" /></a>
+			</div>
 		</div>
 		
-		<!-- PROJECTS MENU -->
-		<div id="projects-menu">
-			<div style="position:relative; top:50%; transform:translate(0,-50%);">
-			<div class="title-box" style="width:205px;">
-				<h2>Projects</h2>
+		<div id="contact-us">
+			<h1>Contact us</h1>
+			<div id="contact-info">
+				<p>
+					Evergreen Garden Center Inc.<br />
+					210 W. Alluvial Ave, Clovis, CA 93611 <br />
+					<a href="mailto:mike@evergreenclovis.com">mike@evergreenclovis.com</a><br />
+					<a href="tel:+15592993107">(559) 299-3107</a>
+				</p>
 			</div>
-			<h3>ludicrous</h3>
-			<h3>zombie</h3>
-			<h3>capstone</h3>
-			<h3>balloon!</h3>
-			<h3>pong!</h3>
-			<br /><h3 onclick="viewMain();">back</h3>
-			</div>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.9150712352202!2d-119.71576019999998!3d36.84451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80945cb9d9efdb59%3A0x7dbba950430e3ee3!2s210%20W%20Alluvial%20Ave%2C%20Clovis%2C%20CA%2093611!5e0!3m2!1sen!2sus!4v1577142702572!5m2!1sen!2sus" height="600" width="100%" frameborder="0" style="border:0; max-width: 1200px; margin-bottom: 0;" allowfullscreen=""></iframe>
 		</div>
+		<div id="footer">
+			&#9400; Evergreen Garden Center Inc. 2020<br />
+			<a style="color: var(--pal-blue); text-decoration: none;">Designed by Dalton Cowin</a>
+		</div>
+	</div>
+	
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     	https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+
+	<script>
+  		// Your web app's Firebase configuration
+  		var firebaseConfig = {
+    		apiKey: "AIzaSyCxcjhIHQZu8FyVOs4d89ZM6vU-Y5XI1lc",
+    		authDomain: "evergreenonline-b3c5d.firebaseapp.com",
+    		databaseURL: "https://evergreenonline-b3c5d.firebaseio.com",
+    		projectId: "evergreenonline-b3c5d",
+    		storageBucket: "evergreenonline-b3c5d.appspot.com",
+    		messagingSenderId: "538111196325",
+    		appId: "1:538111196325:web:77425d4dfcd494b004614c",
+    		measurementId: "G-T9R7N41BRH"
+  		};
+  		// Initialize Firebase
+  		firebase.initializeApp(firebaseConfig);
+  		firebase.analytics();
+	</script>
+	<script>
+        // nav-bar/nav-button auto-hide
+		navProperties = document.getElementById("nav-bar").style;
+		navButtonProperties = document.getElementById("nav-button").style;
+		let prevScrollPos = window.pageYOffset;
+        
+		window.onscroll = function() {
+			
+			// navigation
+			let scrollPos = window.pageYOffset;
+			if (prevScrollPos > scrollPos || scrollPos <= 0) {
+				navProperties.transition = "opacity 0.4s ease-in, top 0.4s ease-out";
+				navProperties.top = "0";
+				navProperties.opacity = "1";
+				navButtonProperties.right = "25px";
+				navButtonProperties.cursor = "pointer";
+				navButtonProperties.pointerEvents = "auto";
+				navButtonProperties.transform = "rotate(0deg)";
+			} else {
+				navProperties.transition = "opacity 0.3s, top 0.5s";
+				navProperties.top = "-90px";
+				navProperties.opacity = "0";
+				navButtonProperties.right = "-110px";
+				navButtonProperties.cursor = "default";
+				navButtonProperties.pointerEvents = "none";
+				navButtonProperties.transform = "rotate(115deg)";
+			}
+			prevScrollPos = scrollPos;
+			
+			document.getElementById("gradient").style.opacity = (window.pageYOffset / 300) - 0.4;
+		}
 		
-		<!-- PROJECTS VIEWER -->
-		<div id="projects-viewer">
-			<div class="project" id="project-1">
-				<div class="title-box">
-					<h2>Project Ludicrous</h2>
-					<p>The second in my line of short demos, this was an idea that I’ve had for awhile, but I didn’t have the knowledge to build until after I graduated. It’s a driving game, where the car is constantly speeding up, and you have to dodge around obstacles until it reaches a certain speed and you win. There are a few quality of life features I’m still working on, but I think the idea is a clever one, and I’m proud to finally have a working prototype.</p>
-				</div>
-			</div>
-		</div>
-		<!--add this code where you want the game to load--> <!--
-		<div class="webgl-content">
-			<div id="gameContainer" style="width: 960px; height: 600px"></div>
-			<div class="footer">
-				<div class="webgl-logo"></div>
-				<div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-				<div class="title">Satan is My Motor</div>
-			</div>
-		</div> -->
-		<script>
-			cssvar = document.documentElement.style; // .setProperty('cssvariable', 'value');
-			function closeMenu() {
-				document.getElementById("gradient1").style.opacity = '0';
-				document.getElementById("grayscale").style.opacity = '0';
-				document.getElementById("grayscale").style.pointerEvents = 'none';
-				document.getElementById("landing-menu").style.opacity = '0';
-				document.getElementById("landing-menu").style.pointerEvents = 'none';
-				document.getElementById("end-game").style.opacity = '1';
+		// nav-screen show/hide functions
+		navScreen = document.getElementById("nav-screen").style;
+		navShade = document.getElementById("background-shader").style;
+		
+		function openMenu() {
+			navScreen.bottom = "10px";
+			navShade.opacity = "1";
+			navShade.pointerEvents = "auto";
+		}
+		
+		function closeMenu() {
+			navScreen.bottom = "-500px";
+			navShade.opacity = "0";
+			navShade.pointerEvents = "none";
+		}
+		
+		// hero funcitons
+		hero = document.getElementById("slideshow").style;
+		heroLoader = document.getElementById("slideLoad").style;
+		let imageCount = 2;
+		let histPage = 0;
+		let isGecko = getComputedStyle(document.body).getPropertyValue('--is-gecko');
+		function heroDefault() {
+			if (isGecko == 1) hero.backgroundImage = "url(images/hero/hero1.jpeg)";
+			else {
+				setInterval (function() {
+					if (histPage == 0) {
+						hero.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+						imageCount++;
+						if (imageCount > 9) imageCount = 1;
+						heroLoader.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
+					}
+				}, 9000);
 			}
-			function openMenu() {
-				document.getElementById("gradient1").style.opacity = '0.85';
-				document.getElementById("grayscale").style.opacity = '1';
-				document.getElementById("grayscale").style.pointerEvents = 'all';
-				document.getElementById("landing-menu").style.opacity = '1';
-				document.getElementById("landing-menu").style.pointerEvents = 'auto';
-				document.getElementById("end-game").style.opacity = '0';
+		}
+		function history() {
+			if (histPage == 0) histPage = 1;
+			else histPage = 0;
+		}
+		heroDefault();
+		aboutUs = document.getElementById("about-us").style;
+		staffMenu = document.getElementById("staff-select").style;
+		staffInfo = document.getElementById("staff-info").style;
+		cssvar = document.documentElement.style;
+		let staffSentry = false; // true when staff info is open
+		// staff show/hide functions
+		function showStaffMenu() { // show staff scroller
+			cssvar.setProperty('--staffselect-d', 'calc(10% + 40px)');
+			cssvar.setProperty('--staffselect-m', '50%');
+			cssvar.setProperty('--about-us-opacity', '0.7');
+			aboutUs.filter = "brightness(0.85)";
+			staffMenu.pointerEvents = "auto";
+			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
+		}
+		function hideStaffMenu() {
+			cssvar.setProperty('--staffselect-d', '-55%');
+			cssvar.setProperty('--staffselect-m', '-50%');
+			aboutUs.filter = "brightness(1)";
+			cssvar.setProperty('--about-us-opacity', '1');
+			staffMenu.pointerEvents = "none";
+			cssvar.setProperty('--staffBack-left-d', 'calc(-55% + 262px)');
+		}
+		function showStaffInfo(staffm) { // show staff-info
+			aboutUs.filter = "brightness(0.7)";
+			staffMenu.filter = "brightness(0.85)";
+			staffMenu.pointerEvents = "none";
+			cssvar.setProperty('--staffinfo-d', 'calc(10% + 80px)');
+			cssvar.setProperty('--staffinfo-m', '50%');
+			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 341px)');
+			staffInfo.pointerEvents = "auto";
+			// to-do: make staff bios dynamically show/hide
+			document.getElementById(staffm).style.display = "inline";
+			cssvar.setProperty('--staffselect-opacity', '0.7');
+			cssvar.setProperty('--about-us-opacity', '0.45');
+			staffSentry = true;
+		}
+		function hideStaffInfo() {
+			cssvar.setProperty('--topbackground-d', 'var(--default-top-background)');
+			aboutUs.filter = "brightness(0.85)";
+			staffMenu.filter = "brightness(1)";
+			staffMenu.opacity = "1";
+			staffMenu.pointerEvents = "auto";
+			cssvar.setProperty('--staffinfo-d', '-55%');
+			cssvar.setProperty('--staffinfo-m', '-50%');
+			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
+			staffInfo.pointerEvents = "none";
+			cssvar.setProperty('--about-us-opacity', '0.7');
+			cssvar.setProperty('--staffselect-opacity', '1');
+			for (var i = 1; i <= 11; i++) {
+				document.getElementById("staff"+i).style.display = "none";
 			}
-			function changeGradient(newSetting) {
-				cssvar.setProperty('--gradient-transition', newSetting);
-				document.getElementById("gradient2").style.opacity =  '0.85';
-				document.getElementById("gradient1").style.opacity = '0';
-				setTimeout(function() {
-					cssvar.setProperty('--gradient', newSetting);
-					document.getElementById("gradient1").style.opacity = '0.85';
-				}, 500)
-			}
-			function viewProjects() {
-				changeGradient('var(--gradient-projects)');
-				document.getElementById("landing-menu").style.left = '100%';
-				document.getElementById("projects-menu").style.right = '10px';
-			}
-			function viewContact() {
-				
-			}
-			function viewMain() {
-				changeGradient('var(--gradient-main)');
-				document.getElementById("landing-menu").style.left = '10px';
-				document.getElementById("projects-menu").style.right = 'calc(100% + 1000px)';
-			}
-		</script>
-	</body>
+			staffSentry = false;
+		}
+		function staffBack() {
+			if (staffSentry == true) hideStaffInfo();
+			else hideStaffMenu();
+		}
+		emailInput = document.getElementById("MERGE0");
+		// email input placeholder focus switch
+		emailInput.addEventListener('focus', function() {
+			emailInput.setAttribute('placeholder', 'Enter your email')
+		})
+		emailInput.addEventListener('blur', function() {
+			emailInput.setAttribute('placeholder', 'Sign me up!')
+		})
+	</script>
+</body>
 </html>
