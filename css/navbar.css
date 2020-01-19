@@ -59,7 +59,7 @@
 	right: 25px;
 	background-color: #2E282A;
 	border-radius: 1000px;
-	transition: opacity 0.4s ease-out, right 0.4s, transform 0.4s;
+	transition: opacity 0.4s ease-out, right 0.4s, transform 0.4s, bottom 0.4s;
 	padding: 15px 15px;
 	display: none;
 	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
