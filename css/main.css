@@ -70,16 +70,10 @@ nobel
 		--is-gecko: 1;
 	}
 }
-html {
-	margin: 0;
-	overflow-x: hidden;
-}
 body {
 	margin: 0;
 	height: 100%;
 	width: 100%;
-	overflow-x: hidden;
-	position: absolute;
 }
 #slideshow {
 	will-change: background-image;
