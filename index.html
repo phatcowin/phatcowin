@@ -1,9 +1,11 @@
 <!doctype html>
 <!--
 TO DO:
+	BUGS:
+		HISTORY:
+			• Hitting home and returning to our-history causes the first dialogue to disappear, stranding the user
+
 	FIRST PUBLISH:
-	• Fix staff-back on mobile
-	• Program our-history
 	• Add staff bios
 	
 	FUTURE RELEASE:
@@ -26,27 +28,47 @@ TO DO:
 	
 <body>
 	<div style="display:none;opacity:0;">
-		<img alt="" src="images/hero/hero1.jpeg">
-		<img alt="" src="images/history/history1.png">
-		<img alt="" src="images/history/history2.png">
-		<img alt="" src="images/history/history3.png">
-		<img alt="" src="images/history/history4.png">
-		<img alt="" src="images/history/history5.png">		
-		<img alt="" src="images/hero/hero2.jpeg">
-		<img alt="" src="images/hero/hero3.jpeg">
-		<img alt="" src="images/hero/hero4.jpeg">
-		<img alt="" src="images/hero/hero5.jpeg">
-		<img alt="" src="images/hero/hero6.jpeg">
-		<img alt="" src="images/hero/hero7.jpeg">
-		<img alt="" src="images/hero/hero8.jpeg">
-		<img alt="" src="images/hero/hero9.jpeg">
+		<img alt="" src="images/hero/hero1.jpeg" />
+		<img alt="" src="images/history/history1.png" />
+		<img alt="" src="images/history/history2.png" />
+		<img alt="" src="images/history/history3.png" />
+		<img alt="" src="images/history/history4.png" />
+		<img alt="" src="images/history/history5.png" />		
+		<img alt="" src="images/hero/hero2.jpeg" />
+		<img alt="" src="images/hero/hero3.jpeg" />
+		<img alt="" src="images/hero/hero4.jpeg" />
+		<img alt="" src="images/hero/hero5.jpeg" />
+		<img alt="" src="images/hero/hero6.jpeg" />
+		<img alt="" src="images/hero/hero7.jpeg" />
+		<img alt="" src="images/hero/hero8.jpeg" />
+		<img alt="" src="images/hero/hero9.jpeg" />
 	</div>
 	<div id="history-viewer">
-		<div class="history-content">
-			<p>Mike Ravicchio began Evergreen Garden Center in 1986. His mom, Dyan Golick, joined him as his business partner and bookkeeper </p>
+		<div class="history-content" id="history-content-1">
+			<p>Mike Ravicchio founded Evergreen Garden Center in 1986. His mom, Dyan Golick, joined him as his business partner and bookkeeper, and his brother, Bryan, joined the team as general manager the following year. The nursery opened at 350 N. Villa Ave in Clovis, CA for its first nine years in business.</p>
+			<button class="history-button" onclick="history('home')">Home</button>
+			<button class="history-button" onclick="history('next')">Next</button>
 		</div>
-		<button class="history-button" id="history-back" onclick="history('previous')">Back</button>
-		<button class="history-button" id="history-next" onclick="history('next')">Next</button>
+		<div class="history-content" id="history-content-2">
+			<p>Once the lease expired at 350 N. Villa, in 1994 Mike found a parcel of land on Alluvial Ave. He spent the next year navigating the building and permitting processes, finally opening the nursery at its current location in 1995.</p>
+			<button class="history-button" onclick="history('previous')">Back</button>
+			<button class="history-button" onclick="history('next')">Next</button>
+		</div>
+		<div class="history-content" id="history-content-3">
+			<p>Together, Mike and Bryan spent each autumn improving the property. They laid cement walkways, one wheelbarrow load at a time; constructed numerous tables to display inventory and built shade structures to protect plants from the searing valley sun.</p>
+			<button class="history-button" onclick="history('previous')">Back</button>
+			<button class="history-button" onclick="history('next')">Next</button>
+		</div>
+		<div class="history-content" id="history-content-4">
+			<p>Over the years, the main focus of the nursery has been trees, shrubs, roses, perennials and bedding plants. With the addition of new employees and a changing business climate, the nursery has maintained this focus while additionally building a reputation as a "destination spot" for succulents, houseplants, gifts, an unbelievable selection of pottery...</p>
+			<button class="history-button" onclick="history('previous')">Back</button>
+			<button class="history-button" onclick="history('next')">Next</button>
+		</div>
+		<div class="history-content" id="history-content-5">
+			<p>...and, of course, the valley's sweetest dogs and cats!</p>
+			<button class="history-button" onclick="history('previous')">Back</button>
+			<button class="history-button" onclick="history('home')">Home</button>
+		</div>
 	</div>
 	<div id="slideshow"></div>
 	<div id="gradient"></div>
@@ -114,6 +136,7 @@ TO DO:
 		</div>
 		<div id="staff2" class="staffms">
 			<h1>Bryan Ravicchio</h1>
+			<h2>General Manager</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. In hac habitasse platea dictumst. Congue eu consequat ac felis donec et odio pellentesque. Nulla at volutpat diam ut venenatis tellus in metus vulputate. In nibh mauris cursus mattis. Tristique senectus et netus et malesuada fames. Lacus vel facilisis volutpat est velit egestas dui. Magna sit amet purus gravida. Dui accumsan sit amet nulla facilisi morbi tempus iaculis. Tempus egestas sed sed risus pretium quam vulputate dignissim. Dolor purus non enim praesent elementum facilisis leo vel fringilla. Quisque sagittis purus sit amet volutpat consequat mauris nunc congue. Pretium aenean pharetra magna ac. Sed velit dignissim sodales ut eu.<br/><br/>
 
 			Imperdiet nulla malesuada pellentesque elit eget gravida cum. Purus sit amet luctus venenatis lectus magna fringilla urna. Turpis tincidunt id aliquet risus feugiat in. Nunc pulvinar sapien et ligula. Quam id leo in vitae turpis massa sed elementum. Id venenatis a condimentum vitae sapien pellentesque habitant. Ornare aenean euismod elementum nisi quis eleifend quam adipiscing vitae. Fusce ut placerat orci nulla pellentesque. Nunc id cursus metus aliquam. Elit at imperdiet dui accumsan sit amet nulla facilisi morbi. Eget nunc scelerisque viverra mauris in aliquam sem. Ultrices gravida dictum fusce ut. Volutpat est velit egestas dui id ornare arcu odio. Sem fringilla ut morbi tincidunt augue interdum. Quis hendrerit dolor magna eget est lorem ipsum. Augue mauris augue neque gravida in. Mollis nunc sed id semper.<br /><br/>
@@ -289,10 +312,12 @@ TO DO:
 		}
 		
 		// hero funcitons
-		hero = document.getElementById("slideshow").style;
-		historyViewer = document.getElementById("history-viewer").style;
+		let hero = document.getElementById("slideshow").style;
+		let historyViewer = document.getElementById("history-viewer").style;
 		let imageCount = 2;
 		let histPage = 0;
+		let histPagePrev = 0;
+		let histPageNext = 1;
 		let isGecko = getComputedStyle(document.body).getPropertyValue('--is-gecko');
 		
 		function heroDefault() {
@@ -310,7 +335,14 @@ TO DO:
 		function history(delta) {
 			if (delta == 'next') histPage++;
 			if (delta == 'previous') histPage--;
-			if (delta == 'home') histPage = 0;
+			if (delta == 'home') { 
+				histPage = 0;
+				document.getElementById("history-content-1").style.left = "100%";
+				document.getElementById("history-content-2").style.left = "100%";
+				document.getElementById("history-content-3").style.left = "100%";
+				document.getElementById("history-content-4").style.left = "100%";
+				document.getElementById("history-content-5").style.left = "100%";
+			}
 			if (histPage > 5) histPage = 5;
 			if (histPage < 0) histPage = 0;
 			if (histPage > 0) viewHistory('1');
@@ -320,6 +352,11 @@ TO DO:
 		function viewHistory(historyBool) {
 			historyViewer.backgroundImage = "url(images/history/history"+histPage+".png)";
 			historyViewer.opacity = historyBool;
+			histPagePrev = histPage - 1;
+			histPageNext = histPage + 1;
+			if (histPagePrev > 0) document.getElementById("history-content-"+histPagePrev).style.left = '-100%';
+			if (histPageNext < 6) document.getElementById("history-content-"+histPageNext).style.left = '150%';
+			if (histPage > 0 && histPage < 6) document.getElementById("history-content-"+histPage).style.left = '10%';
 			if (historyBool == '1') {
 				cssvar.setProperty('--aboutus-d', '-55%');
 				cssvar.setProperty('--aboutus-m', '-50%');
@@ -342,6 +379,7 @@ TO DO:
 			aboutUs.filter = "brightness(0.85)";
 			staffMenu.pointerEvents = "auto";
 			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
+			cssvar.setProperty('--staffBack-left-m', 'calc(50% + 83px)');			
 		}
 		function hideStaffMenu() {
 			cssvar.setProperty('--staffselect-d', '-55%');
@@ -350,6 +388,7 @@ TO DO:
 			cssvar.setProperty('--about-us-opacity', '1');
 			staffMenu.pointerEvents = "none";
 			cssvar.setProperty('--staffBack-left-d', 'calc(-55% + 262px)');
+			cssvar.setProperty('--staffBack-left-m', '-39%');
 		}
 		function showStaffInfo(staffm) { // show staff-info
 			aboutUs.filter = "brightness(0.7)";
@@ -358,6 +397,7 @@ TO DO:
 			cssvar.setProperty('--staffinfo-d', 'calc(10% + 80px)');
 			cssvar.setProperty('--staffinfo-m', '50%');
 			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 341px)');
+			cssvar.setProperty('--staffBack-top-m', 'calc(50% + 185px)');
 			staffInfo.pointerEvents = "auto";
 			// to-do: make staff bios dynamically show/hide
 			document.getElementById(staffm).style.display = "inline";
@@ -374,6 +414,7 @@ TO DO:
 			cssvar.setProperty('--staffinfo-d', '-55%');
 			cssvar.setProperty('--staffinfo-m', '-50%');
 			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
+			cssvar.setProperty('--staffBack-top-m', 'calc(50% + 167px)');
 			staffInfo.pointerEvents = "none";
 			cssvar.setProperty('--about-us-opacity', '0.7');
 			cssvar.setProperty('--staffselect-opacity', '1');
