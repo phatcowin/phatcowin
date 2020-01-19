@@ -487,9 +487,7 @@ p {
 		background-position: center;
 		background-size: cover;
 	}*/
-	#gradient {
-		display: none;
-	}
+
 	#mobile-banner {
 		display: none;
 	}
@@ -508,9 +506,15 @@ p {
 	.button-1 {
 		opacity: 0.9
 	}
+	/*
+	top: 47.5%;
+	left: 100%;
+	transform: translate(0, -50%);
+	*/
 	.history-content {
 		background: rgba(255, 255, 255, 0.7);
-		top: 150px;
+		top: 20%;
+		
 	}
 	.history-button {
 		opacity: 0.9;
@@ -533,7 +537,5 @@ p {
 		top: 150%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-	}
-	#nlg1 {
 	}
 }
