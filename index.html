@@ -339,11 +339,10 @@ TO DO:
 			if (delta == 'previous') histPage--;
 			if (delta == 'home') { 
 				histPage = 0;
-				document.getElementById("history-content-1").style.left = "100%";
-				document.getElementById("history-content-2").style.left = "100%";
-				document.getElementById("history-content-3").style.left = "100%";
-				document.getElementById("history-content-4").style.left = "100%";
-				document.getElementById("history-content-5").style.left = "100%";
+				
+				for (var i = 0; i < 5; i++) {
+					document.getElementById("history-content-"+(i + 1)).style.left = "var(--history-inactive)"
+				}
 			}
 			if (histPage > 5) histPage = 5;
 			if (histPage < 0) histPage = 0;
@@ -356,9 +355,13 @@ TO DO:
 			historyViewer.opacity = historyBool;
 			histPagePrev = histPage - 1;
 			histPageNext = histPage + 1;
-			if (histPagePrev > 0) document.getElementById("history-content-"+histPagePrev).style.left = '-100%';
-			if (histPageNext < 6) document.getElementById("history-content-"+histPageNext).style.left = '150%';
-			if (histPage > 0 && histPage < 6) document.getElementById("history-content-"+histPage).style.left = '10%';
+			if (histPagePrev > 0) {
+				document.getElementById("history-content-"+histPagePrev).style.left = 'var(--history-inactive)';
+			}
+			if (histPageNext < 6) {
+				document.getElementById("history-content-"+histPageNext).style.left = 'var(--history-inactive)';
+			}
+			if (histPage > 0 && histPage < 6) document.getElementById("history-content-"+histPage).style.left = 'var(--history-active)';
 			if (historyBool == '1') {
 				cssvar.setProperty('--aboutus-d', '-55%');
 				cssvar.setProperty('--aboutus-m', '-50%');
