@@ -247,7 +247,7 @@ p {
 	z-index: 100;
 	pointer-events: auto;
 	font-size: 1.2em;
-	margin: 0 2.5px
+	margin: 15px 2.5px
 }
 .history-button:focus {
 	outline: none;
