@@ -4,6 +4,7 @@ TO DO:
 	KNOWN ISSUES:
 	
 	FUTURE RELEASE:
+    • Redesign mobile CSS
 	• Start/implement plant descriptions
 	• Add inventory system
 
@@ -142,23 +143,23 @@ TO DO:
 		</div>
 		<div id="staff6" class="staffms">
 			<h1>Geoff Callow</h1>
-			Geoff began working at the nursery in 2013. Coming from Orchard Supply Hardware gave Geoff his great customer service skills, and in his time at the nursery he has grown into a skillful designer, succulent expert, all-around knowledgeable gardener and a mentor to many of our younger employees. 
+			Geoff began working at the nursery in 2013. Coming from Orchard Supply Hardware gave Geoff his great customer service skills, and in his time at the nursery he has grown into a skillful designer, succulent expert, all-around knowledgeable gardener and a mentor to many of our younger employees. Geoff is currently attending college as a plant science major.
 		</div>
 		<div id="staff7" class="staffms">
 			<h1>Enrique Mendoza</h1>
-			<p>Enrique is the icing on the cake at Evergreen. Enrique has been a member of the local nursery scene for the past 25 years, and his unbelievably extensive knowledge makes his experience evident. As our lead designer and resident creative madman, Enrique is in charge of our pot displays, pre-planted pot displays and all the creative fixtures in the gift shop. In 2016, Enrique began our extensive water plants department, building it from the ground up into Clovis's premier destination for aquatic plants! He has also displayed a remarkable aptitude for finding the hidden talents of many of our younger employees and steer them into their calling at the nursery.</p>
+			<p>Enrique is the icing on the cake at Evergreen. Enrique has been a member of the local nursery scene for the past 25 years, and his unbelievably extensive knowledge makes his experience evident. As our lead designer and resident creative madman, Enrique is in charge of our pot displays, pre-planted pot displays and all the creative fixtures in the gift shop. In 2016, Enrique began our extensive water plants department, building it from the ground up into Clovis's premier destination for aquatic plants! He has also displayed a remarkable aptitude for finding the hidden talents of many of our younger employees, steering them into their calling at the nursery.</p>
 		</div>
 		<div id="staff8" class="staffms">
 			<h1>John Harvill</h1>
-			<p>John is the workhorse of our team. He has been in the local nursery scene for many years, and is fully knowledgeable in every aspect of the nursery business. </p>
+			<p>John is the workhorse of our team. He has been in the local nursery scene for many years and is fully knowledgeable in every aspect of the nursery business. Customer service, however, is John's specialty. No matter the need, John always helps our customers with a smile on his face and a witty joke to follow.</p>
 		</div>
 		<div id="staff9" class="staffms">
 			<h1>Dalton Cowin</h1>
-			<p>If you experience any bugs or issues with our website, please notify me at <a href="mailto:dalton@cowin.dev">dalton@cowin.dev</a></p>
+			<p>If you experience any bugs or issues with our website, please email him at <a href="mailto:dalton@evergreenclovis.com">dalton@evergreenclovis.com</a></p>
 		</div>
 		<div id="staff10" class="staffms">
 			<h1>Ryan Hansen</h1>
-			<h2>Loader</h2>
+			<p></p>
 		</div>
         <div id="staff11" class="staffms">
             <h1>...and more!</h1>
@@ -225,8 +226,7 @@ TO DO:
 	<!-- TODO: Add SDKs for Firebase products that you want to use
      	https://firebase.google.com/docs/web/setup#available-libraries -->
 	<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
-
-	<script>
+    <script>
   		// Your web app's Firebase configuration
   		var firebaseConfig = {
     		apiKey: "AIzaSyCxcjhIHQZu8FyVOs4d89ZM6vU-Y5XI1lc",
@@ -242,175 +242,9 @@ TO DO:
   		firebase.initializeApp(firebaseConfig);
   		firebase.analytics();
 	</script>
+    <script src="js/nav.js"></script>
+    <script src="js/hero.js"></script>
 	<script>
-		cssvar = document.documentElement.style;
-		
-        // nav-bar/nav-button auto-hide
-		navProperties = document.getElementById("nav-bar").style;
-		navButtonProperties = document.getElementById("nav-button").style;
-		let prevScrollPos = window.pageYOffset;
-        
-		window.onscroll = function() {
-			
-			// navigation
-			let scrollPos = window.pageYOffset;
-			if (prevScrollPos > scrollPos || scrollPos <= 0) {
-				navProperties.transition = "opacity 0.4s ease-in, top 0.4s ease-out";
-				navProperties.top = "0";
-				navProperties.opacity = "1";
-				navButtonProperties.right = "25px";
-				navButtonProperties.cursor = "pointer";
-				navButtonProperties.pointerEvents = "auto";
-				navButtonProperties.transform = "rotate(0deg)";
-			} else {
-				navProperties.transition = "opacity 0.3s, top 0.5s";
-				navProperties.top = "-90px";
-				navProperties.opacity = "0";
-				navButtonProperties.right = "-110px";
-				navButtonProperties.cursor = "default";
-				navButtonProperties.pointerEvents = "none";
-				navButtonProperties.transform = "rotate(115deg)";
-			}
-			prevScrollPos = scrollPos;
-			
-			document.getElementById("gradient").style.opacity = (window.pageYOffset / 300) - 0.4;
-		}
-		
-		// nav-screen show/hide functions
-		navScreen = document.getElementById("nav-screen").style;
-		navShade = document.getElementById("background-shader").style;
-		
-		function openMenu() {
-			navScreen.bottom = "10px";
-			navShade.opacity = "1";
-			navShade.pointerEvents = "auto";
-		}
-		
-		function closeMenu() {
-			navScreen.bottom = "-500px";
-			navShade.opacity = "0";
-			navShade.pointerEvents = "none";
-		}
-		
-		// hero funcitons
-		let hero = document.getElementById("slideshow").style;
-		let historyViewer = document.getElementById("history-viewer").style;
-		let imageCount = 2;
-		let histPage = 0;
-		let histPagePrev = 0;
-		let histPageNext = 1;
-		let isGecko = getComputedStyle(document.body).getPropertyValue('--is-gecko');
-		
-		function heroDefault() {
-			if (isGecko == 1) hero.backgroundImage = "url(images/hero/hero1.jpeg)";
-			else {
-				setInterval (function() {
-					hero.backgroundImage = "url(images/hero/hero"+imageCount+".jpeg)";
-					imageCount++;
-					if (imageCount > 9) imageCount = 1;
-				}, 7000);
-			}
-		}
-		heroDefault();
-		
-		function history(delta) {
-			if (delta == 'next') histPage++;
-			if (delta == 'previous') histPage--;
-			if (delta == 'home') { 
-				histPage = 0;
-				
-				for (var i = 0; i < 5; i++) {
-					document.getElementById("history-content-"+(i + 1)).style.left = "var(--history-inactive)"
-				}
-			}
-			if (histPage > 5) histPage = 5;
-			if (histPage < 0) histPage = 0;
-			if (histPage > 0) viewHistory('1');
-			else viewHistory('0');
-		}
-		
-		function viewHistory(historyBool) {
-			historyViewer.backgroundImage = "url(images/history/history"+histPage+".png)";
-			historyViewer.opacity = historyBool;
-			histPagePrev = histPage - 1;
-			histPageNext = histPage + 1;
-			if (histPagePrev > 0) {
-				document.getElementById("history-content-"+histPagePrev).style.left = 'var(--history-inactive)';
-			}
-			if (histPageNext < 6) {
-				document.getElementById("history-content-"+histPageNext).style.left = 'var(--history-inactive)';
-			}
-			if (histPage > 0 && histPage < 6) document.getElementById("history-content-"+histPage).style.left = 'var(--history-active)';
-			if (historyBool == '1') {
-				cssvar.setProperty('--aboutus-d', '-55%');
-				cssvar.setProperty('--aboutus-m', '-50%');
-			}
-			else {
-				cssvar.setProperty('--aboutus-d', '10%');
-				cssvar.setProperty('--aboutus-m', '50%');
-			}
-		}
-
-		aboutUs = document.getElementById("about-us").style;
-		staffMenu = document.getElementById("staff-select").style;
-		staffInfo = document.getElementById("staff-info").style;
-		let staffSentry = false; // true when staff info is open
-		// staff show/hide functions
-		function showStaffMenu() { // show staff scroller
-			cssvar.setProperty('--staffselect-d', 'calc(10% + 40px)');
-			cssvar.setProperty('--staffselect-m', '50%');
-			cssvar.setProperty('--about-us-opacity', '0.7');
-			aboutUs.filter = "brightness(0.85)";
-			staffMenu.pointerEvents = "auto";
-			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
-			cssvar.setProperty('--staffBack-left-m', 'calc(50% + 83px)');			
-		}
-		function hideStaffMenu() {
-			cssvar.setProperty('--staffselect-d', '-55%');
-			cssvar.setProperty('--staffselect-m', '-50%');
-			aboutUs.filter = "brightness(1)";
-			cssvar.setProperty('--about-us-opacity', '1');
-			staffMenu.pointerEvents = "none";
-			cssvar.setProperty('--staffBack-left-d', 'calc(-55% + 262px)');
-			cssvar.setProperty('--staffBack-left-m', '-39%');
-		}
-		function showStaffInfo(staffm) { // show staff-info
-			aboutUs.filter = "brightness(0.7)";
-			staffMenu.filter = "brightness(0.85)";
-			staffMenu.pointerEvents = "none";
-			cssvar.setProperty('--staffinfo-d', 'calc(10% + 80px)');
-			cssvar.setProperty('--staffinfo-m', '50%');
-			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 341px)');
-			cssvar.setProperty('--staffBack-top-m', 'calc(50% + 185px)');
-			staffInfo.pointerEvents = "auto";
-			// to-do: make staff bios dynamically show/hide
-			document.getElementById(staffm).style.display = "inline";
-			cssvar.setProperty('--staffselect-opacity', '0.7');
-			cssvar.setProperty('--about-us-opacity', '0.45');
-			staffSentry = true;
-		}
-		function hideStaffInfo() {
-			cssvar.setProperty('--topbackground-d', 'var(--default-top-background)');
-			aboutUs.filter = "brightness(0.85)";
-			staffMenu.filter = "brightness(1)";
-			staffMenu.opacity = "1";
-			staffMenu.pointerEvents = "auto";
-			cssvar.setProperty('--staffinfo-d', '-55%');
-			cssvar.setProperty('--staffinfo-m', '-50%');
-			cssvar.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
-			cssvar.setProperty('--staffBack-top-m', 'calc(50% + 167px)');
-			staffInfo.pointerEvents = "none";
-			cssvar.setProperty('--about-us-opacity', '0.7');
-			cssvar.setProperty('--staffselect-opacity', '1');
-			for (var i = 1; i <= 12; i++) {
-				document.getElementById("staff"+i).style.display = "none";
-			}
-			staffSentry = false;
-		}
-		function staffBack() {
-			if (staffSentry == true) hideStaffInfo();
-			else hideStaffMenu();
-		}
 		emailInput = document.getElementById("MERGE0");
 		// email input placeholder focus switch
 		emailInput.addEventListener('focus', function() {
