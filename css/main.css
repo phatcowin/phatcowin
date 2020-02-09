@@ -82,6 +82,7 @@ body {
 	width: 100%;
 }
 #slideshow {
+    background-color: #CCCCCC;
 	will-change: background-image;
 	background-image: url("../images/hero/hero1.jpeg");
 	transition: background-image 1.3s ease-in-out;
