@@ -333,8 +333,7 @@ p {
 	background: white;
 	top: 25%;
 	left: var(--staffinfo-d);
-	min-width: 300px;
-	width: 30%;
+	width: 300px;
 	height: 400px;
 	font-family: var(--body-text);
 	padding: 30px;
@@ -483,7 +482,7 @@ p {
 	color: white;
 	text-align: center;
 	font-family: var(--header);
-	margin-top: 0;
+	margin-top: 15px;
 }
 
 /* MOBILE RENDER: */

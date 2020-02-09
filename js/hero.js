@@ -1,5 +1,3 @@
-cssvar = document.documentElement.style;
-		
 // hero funcitons
 hero = document.getElementById("slideshow").style;
 historyViewer = document.getElementById("history-viewer").style;
@@ -49,68 +47,65 @@ function viewHistory(historyBool) {
     }
     if (histPage > 0 && histPage < 6) document.getElementById("history-content-"+histPage).style.left = 'var(--history-active)';
     if (historyBool == '1') {
-        cssvar.setProperty('--aboutus-d', '-55%');
-        cssvar.setProperty('--aboutus-m', '-50%');
+        document.documentElement.style.setProperty('--aboutus-d', '-55%');
+        document.documentElement.style.setProperty('--aboutus-m', '-50%');
     }
 	else {
-        cssvar.setProperty('--aboutus-d', '10%');
-        cssvar.setProperty('--aboutus-m', '50%');
+        document.documentElement.style.setProperty('--aboutus-d', '10%');
+        document.documentElement.style.setProperty('--aboutus-m', '50%');
     }
 }
 
-aboutUs = document.getElementById("about-us").style;
-staffMenu = document.getElementById("staff-select").style;
-staffInfo = document.getElementById("staff-info").style;
 // staff show/hide functions
 function showStaffMenu() { // show staff scroller
-	cssvar.setProperty('--staffselect-d', 'calc(10% + 40px)');
-	cssvar.setProperty('--staffselect-m', '50%');
-	cssvar.setProperty('--about-us-opacity', '0.7');
-	aboutUs.filter = "brightness(0.85)";
-	staffMenu.pointerEvents = "auto";
-	cssvar.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
-	cssvar.setProperty('--staffBack-left-m', 'calc(50% + 83px)');			
+	document.documentElement.style.setProperty('--staffselect-d', 'calc(10% + 40px)');
+	document.documentElement.style.setProperty('--staffselect-m', '50%');
+	document.documentElement.style.setProperty('--about-us-opacity', '0.7');
+	document.getElementById("about-us").style.filter = "brightness(0.85)";
+	document.getElementById("staff-select").style.pointerEvents = "auto";
+	document.documentElement.style.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
+	document.documentElement.style.setProperty('--staffBack-left-m', 'calc(50% + 83px)');			
 }
 function hideStaffMenu() {
-	cssvar.setProperty('--staffselect-d', '-55%');
-	cssvar.setProperty('--staffselect-m', '-50%');
-	aboutUs.filter = "brightness(1)";
-	cssvar.setProperty('--about-us-opacity', '1');
-	staffMenu.pointerEvents = "none";
-	cssvar.setProperty('--staffBack-left-d', 'calc(-55% + 262px)');
-	cssvar.setProperty('--staffBack-left-m', '-39%');
+	document.documentElement.style.setProperty('--staffselect-d', '-55%');
+	document.documentElement.style.setProperty('--staffselect-m', '-50%');
+	document.getElementById("about-us").style.filter = "brightness(1)";
+	document.documentElement.style.setProperty('--about-us-opacity', '1');
+	document.getElementById("staff-select").style.pointerEvents = "none";
+	document.documentElement.style.setProperty('--staffBack-left-d', 'calc(-55% + 262px)');
+	document.documentElement.style.setProperty('--staffBack-left-m', '-39%');
 }
 function showStaffInfo(staffm) { // show staff-info
-	aboutUs.filter = "brightness(0.7)";
-	staffMenu.filter = "brightness(0.85)";
-	staffMenu.pointerEvents = "none";
-	cssvar.setProperty('--staffinfo-d', 'calc(10% + 80px)');
-	cssvar.setProperty('--staffinfo-m', '50%');
-	cssvar.setProperty('--staffBack-left-d', 'calc(10% + 341px)');
-	cssvar.setProperty('--staffBack-top-m', 'calc(50% + 185px)');
-	staffInfo.pointerEvents = "auto";
+	document.getElementById("about-us").style.filter = "brightness(0.7)";
+	document.getElementById("staff-select").style.filter = "brightness(0.85)";
+	document.getElementById("staff-select").style.pointerEvents = "none";
+	document.documentElement.style.setProperty('--staffinfo-d', 'calc(10% + 80px)');
+	document.documentElement.style.setProperty('--staffinfo-m', '50%');
+	document.documentElement.style.setProperty('--staffBack-left-d', 'calc(10% + 341px)');
+	document.documentElement.style.setProperty('--staffBack-top-m', 'calc(50% + 185px)');
+	document.getElementById("staff-info").style.pointerEvents = "auto";
 	document.getElementById(staffm).style.display = "inline";
-	cssvar.setProperty('--staffselect-opacity', '0.7');
-	cssvar.setProperty('--about-us-opacity', '0.45');
+	document.documentElement.style.setProperty('--staffselect-opacity', '0.7');
+	document.documentElement.style.setProperty('--about-us-opacity', '0.45');
 }
 function hideStaffInfo() {
-	cssvar.setProperty('--topbackground-d', 'var(--default-top-background)');
-	aboutUs.filter = "brightness(0.85)";
-	staffMenu.filter = "brightness(1)";
-	staffMenu.opacity = "1";
-	staffMenu.pointerEvents = "auto";
-	cssvar.setProperty('--staffinfo-d', '-55%');
-	cssvar.setProperty('--staffinfo-m', '-50%');
-	cssvar.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
-	cssvar.setProperty('--staffBack-top-m', 'calc(50% + 167px)');
-	staffInfo.pointerEvents = "none";
-	cssvar.setProperty('--about-us-opacity', '0.7');
-	cssvar.setProperty('--staffselect-opacity', '1');
-	for (var i = 1; i <= 12; i++) {
+	document.documentElement.style.setProperty('--topbackground-d', 'var(--default-top-background)');
+	document.getElementById("about-us").style.filter = "brightness(0.85)";
+	document.getElementById("staff-select").style.filter = "brightness(1)";
+	document.getElementById("staff-select").style.opacity = "1";
+	document.getElementById("staff-select").style.pointerEvents = "auto";
+	document.documentElement.style.setProperty('--staffinfo-d', '-55%');
+	document.documentElement.style.setProperty('--staffinfo-m', '-50%');
+	document.documentElement.style.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
+	document.documentElement.style.setProperty('--staffBack-top-m', 'calc(50% + 167px)');
+	document.getElementById("staff-info").style.pointerEvents = "none";
+	document.documentElement.style.setProperty('--about-us-opacity', '0.7');
+	document.documentElement.style.setProperty('--staffselect-opacity', '1');
+	for (let i = 1; i <= 9; i++) {
         document.getElementById("staff"+i).style.display = "none";
     }
 }
 function staffBack() {
-	if (staffInfo.pointerEvents == 'auto') hideStaffInfo();
+	if (document.getElementById("staff-info").style.pointerEvents == 'auto') hideStaffInfo();
 	else hideStaffMenu();
 }
