@@ -1,0 +1,52 @@
+@media only screen and (max-width: 680px) {
+    :root {
+        --history-inactive: var(--history-left-m-inactive);
+        --history-active: var(--history-left-m-active);
+    }
+    #mobile-banner {
+        display: none;
+    }
+    .text-blob {
+        width: 95%;
+    }
+    #about-us {
+        top: 40%;
+        left: var(--aboutus-m);
+        transform: translate(-50%, -50%);
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        text-shadow: 1px 1px 20px white;
+    }
+    .button-1 {
+        opacity: 0.9
+    }
+    .history-content {
+		background: rgba(255, 255, 255, 0.7);
+		left: var(--history-inactive);
+		top: 30%;
+		transform: translate(-50%, -50%)
+	}
+	.history-button {
+		opacity: 0.9;
+	}
+	#staff-back {
+		top: var(--staffBack-top-m);
+		left: var(--staffBack-left-m);
+	}
+	#staff-select {
+		top: calc(40% + 20px);
+		left: var(--staffselect-m);
+		transform: translate(-50%, -50%);
+	}
+	#staff-info {
+		left: var(--staffinfo-m);
+		top: calc(40% + 40px);
+		transform: translate(-50%, -50%);
+	}
+	#newsletter {
+		top: 150%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
