@@ -82,7 +82,7 @@ function showStaffInfo(staffm) { // show staff-info
 	document.documentElement.style.setProperty('--staffinfo-d', 'calc(10% + 80px)');
 	document.documentElement.style.setProperty('--staffinfo-m', '50%');
 	document.documentElement.style.setProperty('--staffBack-left-d', 'calc(10% + 341px)');
-	document.documentElement.style.setProperty('--staffBack-top-m', 'calc(50% + 185px)');
+	document.documentElement.style.setProperty('--staffBack-top-m', 'calc(40% + 270px)');
 	document.getElementById("staff-info").style.pointerEvents = "auto";
 	document.getElementById(staffm).style.display = "inline";
 	document.documentElement.style.setProperty('--staffselect-opacity', '0.7');
@@ -97,7 +97,7 @@ function hideStaffInfo() {
 	document.documentElement.style.setProperty('--staffinfo-d', '-55%');
 	document.documentElement.style.setProperty('--staffinfo-m', '-50%');
 	document.documentElement.style.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
-	document.documentElement.style.setProperty('--staffBack-top-m', 'calc(50% + 167px)');
+	document.documentElement.style.setProperty('--staffBack-top-m', 'calc(40% + 250px)');
 	document.getElementById("staff-info").style.pointerEvents = "none";
 	document.documentElement.style.setProperty('--about-us-opacity', '0.7');
 	document.documentElement.style.setProperty('--staffselect-opacity', '1');
