@@ -1,6 +1,5 @@
 @charset "UTF-8";
 /* Navbar CSS */
-
 #nav-bar {
 	will-change: top, opacity;
     position: fixed;
@@ -32,74 +31,6 @@
 	transform: translate(-50%, 0);
 	transition: bottom 0.25s;
 }
-#nav-screen li {
-	height: 80px;
-	float: center;
-	display: block;
-	background-color: rgba(50, 50, 50, 0.95);
-	margin-bottom: 1px;
-}
-#nav-screen li a {
-	display: block;
-	text-align: center;
-	padding: 30px 35px 35px 35px;
-	text-decoration: none;
-	font-family: var(--header);
-	font-size: 1.5em;
-	color: rgb(0, 130, 255);
-	cursor: pointer;
-}
-#nav-button {
-	will-change: right, transform;
-	z-index: 1000;
-	position: fixed;
-	width: 50px;
-	height: 50px;
-	bottom: 25px;
-	right: 25px;
-	background-color: #2E282A;
-	border-radius: 1000px;
-	transition: opacity 0.4s ease-out, right 0.4s, transform 0.4s, bottom 0.4s;
-	padding: 15px 15px;
-	display: none;
-	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
-}
-#background-shader {
-	will-change: opacity;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	top: 0;
-	z-index: 900;
-	pointer-events: none;
-	background-color: rgba(0, 0, 0, 0.5);
-	transition: opacity 0.3s;
-	opacity: 0;
-}
-@media only screen and (max-width: 680px) {
-	#nav-bar {
-	display: none;
-	}
-	#nav-button {
-		display: block;
-		cursor: pointer;
-	}
-}
-@media only screen and (min-width: 681px) {
-	#nav-screen {
-		display: none;
-	}
-	#background-shader {
-		display: none;
-	}
-}
-#nav-button img {
-	width: 90%;
-	position: relative;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-}
 #nav-bar img {
     padding: 8px 10px 0 15px;
     height: 68px;
@@ -126,15 +57,50 @@
 #nav-bar li a:hover {
     color: var(--pal-green);
 }
-@supports ((backdrop-filter: blur(7px)) or (-webkit-backdrop-filter: blur(7px)) or (-moz-backdrop-filter: blur(7px))) {
-	#nav-screen li {
-		backdrop-filter: blur(7px);
-		-webkit-backdrop-filter: blur(7px);
-		-moz-backdrop-filter: blur(7px);
-	}
+#nav-overlay {
+    display: none;
 }
-@media only screen and (max-width: 680px) {
-	#nav-screen {
-		display: block;
-	}
+#nav-mobile {
+    display: none;
+}
+@media screen and (max-width: 680px) {
+    #nav-bar {
+        display: none;
+    }
+    #nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: block;
+        opacity: 0;
+    }
+    #nav-mobile {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 15%;
+        display: block;
+        z-index: 100;
+        background: linear-gradient(0deg, transparent, rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 1));
+    }
+    #mobile-logo {
+        height: 75%;
+        position: absolute;
+        padding: 10px;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        filter: brightness(10);
+    }
+    #hamburger {
+        height: 70%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px;
+    }
 }

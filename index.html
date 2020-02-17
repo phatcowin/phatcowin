@@ -2,12 +2,16 @@
 <!--
 TO DO:
 	KNOWN ISSUES:
-	
-	FUTURE RELEASE:
+    • Mobile site in landscape is broken
+
+	NEXT RELEASE:
     • Redesign mobile CSS
+        -> see OneNote/Programming/Evergreen/Mobile Storyboard
+    • Separate main.css, desktop.css and mobile.css
+
+    FUTURE RELEASE:
 	• Start/implement plant descriptions
 	• Add inventory system
-
 -->
 <html>
 <head>
@@ -19,16 +23,20 @@ TO DO:
 	
 	<!-- CSS Stylesheets -->
 	<link href="css/main.css" rel="stylesheet" media="all" />
-    <link href="css/mobile.css" rel="stylesheet" media="all" />
+    <link href="css/mobile.css" rel="stylesheet" media="screen and (max-width: 680px)" />
+    <link href="css/desktop.css" rel="stylesheet" media="screen and (min-width: 681px)" />
 	<link href="css/navbar.css" rel="stylesheet" media="all" />
 </head>
 	
 <body>
+    <!-- preload the first three hero images for smoother load times -->
 	<div style="display:none;opacity:0;">
 		<img alt="" src="images/hero/hero1.jpeg" />	
 		<img alt="" src="images/hero/hero2.jpeg" />
 		<img alt="" src="images/hero/hero3.jpeg" />
 	</div>
+    
+    <!-- OUR HISTORY -->
 	<div id="history-viewer">
 		<div class="history-content" id="history-content-1">
 			<p>Mike Ravicchio founded Evergreen Garden Center in 1986. His mom, Dyan Golick, joined him as his business partner and bookkeeper, and his brother, Bryan, joined the team as general manager the following year. The nursery opened at 350 N. Villa Ave in Clovis, CA for its first nine years in business.</p>
@@ -71,9 +79,13 @@ TO DO:
 			</div>
 		</div>
 	</div>
+    
+    <!-- HERO ELEMENT -->
 	<div id="slideshow"></div>
 	<div id="gradient"></div>
 	<img id="hero-bottom" src="images/SVG/heroBottom.svg" width="100%" alt="">
+    
+    <!-- NAVIGATION -->
     <div id="nav-bar">
         <a href=""><img src="images/gradyLogo.png" alt="Evergreen.png"></a>
         <li><a href="#contact-us">Contact Us</a></li>
@@ -81,23 +93,19 @@ TO DO:
         <li><a href="#newsletter">Newsletter</a></li>
         <li><a href="#about-us">About Us</a></li>
 	</div>
-	
-	<div id="nav-button"><img src="images/hamburger.png" alt="E" onclick="openMenu()" /></div>
-	<div id="nav-screen">
-			<li style="border-radius: 20px 20px 0 0"><a href="#body" onclick="return closeMenu();" style>Home</a></li>
-			<li><a href="#about-us" onclick="return closeMenu();">About Us</a></li>
-			<li><a href="#newsletter" onclick="return closeMenu();">Newsletter</a></li>
-			<li><a href="#social-media" onclick="return closeMenu();">Social Media</a></li>
-			<li style="border-radius: 0 0 20px 20px; margin-bottom: 10px;"><a href="#contact-us" onclick="return closeMenu();">Contact Us</a></li>
-		<li style="border-radius: 20px"><a onclick="return closeMenu()"><b>Close</b></a></li>
-	</div>
-	<div id="background-shader" onclick="closeMenu();"></div>
-	
-	<div id="mobile-banner">
-		<img src="images/gradyLogo.png" alt="Evergreen Garden Center" />
-	</div>
-	
+    <div id="nav-overlay">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+        <li><a href="#social-media">Social Media</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+    </div>
+    <div id="nav-mobile">
+        <img id="mobile-logo" src="images/gradyLogo.png" />
+        <img id="hamburger" src="images/hamburger.png" />
+    </div>
 
+    <!-- ABOUT US -->
 	<div id="about-us" class="text-blob">
 		<h1>Welcome to Evergreen</h1>
 		<p>Evergreen Garden Center has been doing business for over 30 years, specializing in roses, perennials and gifts. New lines of succulents, drought tolerant plants, pottery and iron trellises have completed our line. We also carry a full line of trees, shrubs, vegetables, chemicals and organic fertilizers.</p>
@@ -106,8 +114,9 @@ TO DO:
 			<button class="button-1" onclick="showStaffMenu()"><b>Our Staff</b></button>
 		</div>
 	</div>
+    
+    <!-- STAFF -->
 	<div id="staff-back"><button onclick="staffBack()">&larr;Back</button></div>
-	<!-- STAFF SECTION -->
 	<div id="staff-select">
 		<li onclick="showStaffInfo('staff1')">Mike Ravicchio</li>
 		<li onclick="showStaffInfo('staff2')">Bryan Ravicchio</li>
@@ -132,7 +141,7 @@ TO DO:
 		</div>
 		<div id="staff3" class="staffms">
 			<h1>Shana Matteucci</h1>
-            <p>Shana has blessed the nursery with her knowledge and experience since the spring of 2000. With 200 roses and counting in her yard, Shana specializes in roses, colorful gardens and intermixing varieties. Furthermore, Shana is very precise&mdash;she'll present you with a variety of plant material, solutions and her preference without wasting a second of your time.</p>
+            <p>Shana has blessed the nursery with her knowledge and experience since the spring of 2000. With 150 roses and counting in her yard, Shana specializes in roses, colorful gardens and intermixing varieties. Furthermore, Shana is very precise&mdash;she'll present you with a variety of plant material, solutions and her preference without wasting a second of your time.</p>
 		</div>
 		<div id="staff4" class="staffms">
 			<h1>Kat Ravicciho</h1>
@@ -168,33 +177,34 @@ TO DO:
         </div>
 	</div>
 	
+    <!-- NEWSLETTER -->
 	<div id="newsletter-background">
 		<div id="nlg1"></div>
 		<div id="nlg2"></div>
 	</div>
-	
-        <div id="newsletter" class="text-blob">
-            <h1>Sign up for our newsletter</h1>
-            <p>Get seasonal planting tips, updates to our inventory and exclusive offers emailed direclty to you! We only email once or twice a month, and we won't give out your information.</p>
-            <div class="newsletter-container">
-				<form action="https://evergreengardencenter.us17.list-manage.com/subscribe/post" method="POST">
-    				<input type="hidden" name="u" value="f88f0cf60aff4c379bde35b3a" />
-    				<input type="hidden" name="id" value="308d926502" />
-                	<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" class="newsletter-input" placeholder="Sign me up!"/>
-                	<input type="submit" id="submit" class="newsletter-input" value="&rarr;"/>
-				</form>
-            </div>
+    <div id="newsletter" class="text-blob">
+        <h1>Sign up for our newsletter</h1>
+        <p>Get seasonal planting tips, updates to our inventory and exclusive offers emailed direclty to you! We only email once or twice a month, and we won't give out your information.</p>
+        <div class="newsletter-container">
+            <form action="https://evergreengardencenter.us17.list-manage.com/subscribe/post" method="POST">
+                <input type="hidden" name="u" value="f88f0cf60aff4c379bde35b3a" />
+                <input type="hidden" name="id" value="308d926502" />
+                <input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" class="newsletter-input" placeholder="Sign me up!"/>
+                <input type="submit" id="submit" class="newsletter-input" value="&rarr;"/>
+            </form>
         </div>
-	
+    </div>
+    
 	<div class="page-content">
-		
+        
+        <!-- SOCIAL MEDIA -->
 		<div id="social-media">
 			<!-- Google Reviews Widget (Elfsight) -->
 			<div style="margin: 20px;">
 				<script src="https://apps.elfsight.com/p/platform.js" defer></script>
 				<div class="elfsight-app-f103c561-27c2-4589-94e2-f983c0aaebad" style="font-family: var(--body-text); max-width: 1200px; position: relative; left: 50%; transform: translate(-50%, 0);"></div>
 			</div>
-			<!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/f6bc76597e7e5bdfaf996b08dd3df084.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; max-width: 1200px; border: 0; overflow: hidden;"></iframe>
+            <!-- LightWidget WIDGET --><script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="https://cdn.lightwidget.com/widgets/f6bc76597e7e5bdfaf996b08dd3df084.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; max-width: 1200px; border: 0; overflow: hidden;"></iframe>
 
 			<div id="social-icons">
 				<a href="https://www.facebook.com/Evergreen-Garden-Center-182217145174726"><img class="social-icon" src="images/facebook.svg" alt="Facebook" /></a>
@@ -203,6 +213,7 @@ TO DO:
 			</div>
 		</div>
 		
+        <!-- CONTACT US -->
 		<div id="contact-us">
 			<h1>Contact us</h1>
 			<div id="contact-info">
