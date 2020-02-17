@@ -445,14 +445,3 @@ p {
 #contact-us a {
 	color: #E4572E;
 }
-#footer {
-	width: 100%;
-	padding: 15px 0;
-	background-color: var(--pal-gray);
-	z-index: 2;
-	display: block;
-	color: white;
-	text-align: center;
-	font-family: var(--header);
-	margin-top: 15px;
-}

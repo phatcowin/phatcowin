@@ -85,7 +85,7 @@
         height: 15%;
         display: block;
         z-index: 100;
-        background: linear-gradient(0deg, transparent, rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 1));
+        background: linear-gradient(0deg, transparent, transparent, rgba(25, 25, 25, 0.7), rgba(25, 25, 25, 0.9));
     }
     #mobile-logo {
         height: 75%;

@@ -148,6 +148,9 @@ p {
 .button-2:focus {
 	outline: none;
 }
+#newsletter p {
+    padding-bottom: 10px;
+}
 .newsletter-container {
 	display: inline-block;
 	border-radius: 8px;
