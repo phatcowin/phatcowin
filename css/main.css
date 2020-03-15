@@ -100,7 +100,6 @@ p {
     padding: 30px;
     color: black;
     background-color: white;
-    max-width: 300px;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
     z-index: 2;
 }
@@ -109,6 +108,17 @@ p {
 	position: absolute;
 	top: 200%;
 	width: 100%;
+}
+#about-us {
+    top: 25%;
+    /*min-width: 300px;
+    max-width: calc(100% - 10px);*/
+    background: white;
+	color: black;
+	filter: brightness(1);
+	transition: top 0.4s, left 0.4s, opacity 0.5s ease-in, filter 0.4s;
+	z-index: 4;
+	opacity: var(--about-us-opacity);
 }
 .button-container {
 	font-size: 1.2em;

@@ -15,8 +15,10 @@ body {
 .text-blob {
     left: 50%;
     transform: translate(-50%, 0);
-    max-width: calc(100% - 70px);
-    min-width: calc(90% - 70px);
+    /*max-width: calc(100% - 70px);
+    min-width: calc(90% - 70px);*/
+	max-width: calc(100% - 70px);
+	min-width: 300px;
 }
 #about-us {
     top: calc(100% - 130px);
@@ -44,6 +46,7 @@ body {
 }
 .history-content {
     transform: translate(-50%, 0);
+	bottom: 10px;
 }
 #newsletter {
     top: 150%;
