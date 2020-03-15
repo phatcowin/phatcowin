@@ -1,8 +1,5 @@
 @charset "UTF-8";
 /* Navbar CSS */
-#nav-mobile-blinds {
-    
-}
 #nav-bar {
 	will-change: top, opacity;
     position: fixed;
@@ -97,8 +94,9 @@
         top: -265px;
         transition: top 0.3s;
         left: 50%;
-        max-width: calc(100% - 10px);
-        min-width: calc(90% - 10px);
+        /*max-width: calc(100% - 10px);
+        min-width: calc(90% - 10px);*/
+		width: calc(100% - 70px);
 		transform: translate(-50%, 0);
         display: block;
         z-index: 100;
