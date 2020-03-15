@@ -12,6 +12,44 @@ body {
     top: 0;
     left: 0;
 }
+#staff-select {
+	position: absolute;
+	transition: left 0.4s, top 0.4s, opacity 0.5s ease-in, filter 0.4s;
+	z-index: 4;
+	width: 360px;
+	height: 460px;
+	border-radius: 10px;
+	background: white;
+	top: calc(100% - 145px);
+	left: var(--staffselect-m);
+	overflow-y: scroll;
+	overflow-x: hidden;
+	filter: brightness(1);
+	pointer-events: none;
+	opacity: var(--staffselect-opacity);
+}
+#staff-info {
+	position: absolute;
+	transition: left 0.4s, top 0.4s;
+	z-index: 5;
+	border-radius: 10px;
+	background: white;
+	top: calc(100% - 145px);
+	left: var(--staffinfo-m);
+	width: 300px;
+	height: 400px;
+	font-family: var(--body-text);
+	padding: 30px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	pointer-events: none;
+}
+#staff-info h2 {
+	text-align: center;
+	font-weight: var(--body-weight);
+	font-style: var(--header-style);
+	margin-top: -20px;
+}
 .text-blob {
     left: 50%;
     transform: translate(-50%, 0);

@@ -25,9 +25,9 @@ nobel
 	--aboutus-d: 10%;
 	--aboutus-m: 50%;
 	--staffselect-d: -55%;
-	--staffselect-m: -50%;
+	--staffselect-m: -100%;
 	--staffinfo-d: -55%;
-	--staffinfo-m: -50%;
+	--staffinfo-m: -100%;
 	--staffBack-left-d: calc(-55% + 301px);
 	--staffBack-top-m: calc(40% + 250px);
 	--staffBack-left-m: -39%;
