@@ -67,7 +67,6 @@
     #mobile-logo {
         position: relative;
         max-height: 70px;
-		max-width: calc(50% - 10px);
         left: 0px;
         float: left;
         top: -15px;
