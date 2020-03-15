@@ -24,17 +24,18 @@ body {
 .text-blob {
     left: 50%;
     transform: translate(-50%, 0);
-    width: 100%;
+    max-width: calc(100% - 70px);
+    min-width: calc(90% - 70px);
 }
 #about-us {
-    top: 80%;
+    top: calc(100% - 130px);
 }
 #newsletter {
-    top: 180%;
+    top: 150%;
 }
 .page-content {
     width: 100%;
-    top: 280%;
+    top: 210%;
     z-index: 5;
     background-color: white;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);

@@ -4,11 +4,6 @@ TO DO:
 	KNOWN ISSUES:
     • Mobile site in landscape is broken
 
-	NEXT RELEASE:
-    • Redesign mobile CSS
-        -> see OneNote/Programming/Evergreen/Mobile Storyboard
-    • Separate main.css, desktop.css and mobile.css
-
     FUTURE RELEASE:
 	• Start/implement plant descriptions
 	• Add inventory system
@@ -93,17 +88,22 @@ TO DO:
         <li><a href="#newsletter">Newsletter</a></li>
         <li><a href="#about-us">About Us</a></li>
 	</div>
-    <div id="nav-overlay">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#about-us">About Us</a></li>
-        <li><a href="#newsletter">Newsletter</a></li>
-        <li><a href="#social-media">Social Media</a></li>
-        <li><a href="#contact-us">Contact Us</a></li>
-    </div>
     <div id="nav-mobile">
-        <img id="mobile-logo" src="images/gradyLogo.png" />
-        <img id="hamburger" src="images/hamburger.png" />
+        <li><a href="#about-us" onclick="toggle_m_nav()">About Us</a></li>
+        <li><a href="#newsletter" onclick="toggle_m_nav()">Newsletter</a></li>
+        <li><a href="#social-media" onclick="toggle_m_nav()">Social Media</a></li>
+        <li><a href="#contact-us" onclick="toggle_m_nav()">Contact Us</a></li>
+        <li>
+            <a href="index.html">
+                <img id="mobile-logo" src="images/gradyLogo.png" alt="Evergreen" />
+            </a>
+            <a onclick="toggle_m_nav()">
+                <img id="hamburger" src="images/greenburger.png" alt="menu" />
+            </a>
+        </li>
     </div>
+    <div id="nav-mobile-blinds"></div>
+	<script src="js/nav.js"></script>
 
     <!-- ABOUT US -->
 	<div id="about-us" class="text-blob">
@@ -254,7 +254,6 @@ TO DO:
   		firebase.initializeApp(firebaseConfig);
   		firebase.analytics();
 	</script>
-    <script src="js/nav.js"></script>
     <script src="js/hero.js"></script>
 	<script>
 		emailInput = document.getElementById("MERGE0");
