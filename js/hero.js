@@ -101,7 +101,7 @@ function hideStaffInfo() {
 	document.getElementById("staff-info").style.pointerEvents = "none";
 	document.documentElement.style.setProperty('--about-us-opacity', '0.7');
 	document.documentElement.style.setProperty('--staffselect-opacity', '1');
-	for (let i = 1; i <= 9; i++) {
+	for (let i = 1; i <= 11; i++) {
         document.getElementById("staff"+i).style.display = "none";
     }
 }

@@ -1,3 +1,7 @@
+:root {
+    --history-active: var(--history-left-m-active);
+    --history-inactive: var(--history-left-m-inactive);
+}
 body {
     margin: 0;
     width: 100%;
@@ -6,20 +10,7 @@ body {
 #slideshow {
     position: fixed;
     top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #CCCCCC;
-    background-image: url("../images/hero/hero1.jpeg");
-    will-change: background-image;
-    background-size: cover;
-    transition: background-image 1.3s ease-in-out;
-    transform-style: preserve-3d;
-    -webkit-transform-style: preserve-3d;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 1;
+    left: 0;
 }
 .text-blob {
     left: 50%;
@@ -29,6 +20,30 @@ body {
 }
 #about-us {
     top: calc(100% - 130px);
+}
+#history-viewer {
+	will-change: background-image, opacity;
+	transition: opacity 1.3s ease-in-out, background-image 1.3s ease-in-out;
+    opacity: 0;
+	background-image: url("../images/history/history1.png");
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	z-index: 10;
+	overflow-x: hidden;
+    pointer-events: none;
+}
+.history-content {
+    transform: translate(-50%, 0);
 }
 #newsletter {
     top: 150%;

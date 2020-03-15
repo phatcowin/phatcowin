@@ -1,90 +1,10 @@
-@charset "UTF-8";
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600|Raleway:400,600&display=swap');
-@import url("https://use.typekit.net/xpb8wcc.css");
-/* 
-FONTS:
-• benton-modern-display, serif [weight: 400, 700; style: normal, italic]
-• benton-modern-display-compre, serif [weight: 400, 700; style: normal, italic]
-• benton-modern-display-extra, serif [weight: 400, 700; style: normal, italic]
-• benton-modern-display-conden, serif [weight: 400, 700; style: normal, italic]
-
-• forma-djr-text, sans-serif [weight: 400, 700; style: normal, italic]
-mantinia
-nobel
-*/
-:root {
-	/* PALETTE */
-	--pal-red: #E4572E;
-	--pal-blue: #17BEBB;
-	--pal-yellow: #FFC914;
-	--pal-green: #4AAD52;
-	--pal-gray: #2E282A;
-	--pal-lgray: #EFEFEF;
-
-	/* CARDS */
-	--aboutus-d: 10%;
-	--aboutus-m: 50%;
-	--staffselect-d: -55%;
-	--staffselect-m: -50%;
-	--staffinfo-d: -55%;
-	--staffinfo-m: -50%;
-	--staffBack-left-d: calc(-55% + 301px);
-	--staffBack-top-m: calc(40% + 250px);
-	--staffBack-left-m: -39%;
-	--about-us-opacity: 1;
-	--staffselect-opacity: 1;
-	--history-left-m-active: 50%;
-	--history-left-d-active: 10%;
-	--history-left-d-inactive: 110%;
-	--history-left-m-inactive: 160%;
-	--history-active: var(--history-left-d-active);
-	--history-inactive: var(--history-left-d-inactive);
-
-	
-	/* BACKGROUNDS */
-	--default-top-background: url("../images/hero/hero9.jpeg");
-	--topbackground-d: var(--default-top-background);
-	--topbackground-m: var(--default-top-background);
-	--gradient-opacity: 0;
-	
-	/* FONTS */
-	--header: forma-djr-text, sans-serif;
-	--header-weight: 700;
-	--header-style: normal;
-	
-	--body-text: forma-djr-text, sans-serif;
-	--body-weight: 400;
-	--body-style: normal;
-	
-	--font-size-p: 1em;
-	--nav-fsize: 1em;
-}
-@supports (-moz-appearance: none) {
-	body {
-		--is-gecko: 1;
-	}
-}
 body {
-	margin: 0;
-	height: 100%;
-	width: 100%;
+    margin: 0;
+    height: 100%;
+    width: 100%;
 }
 #slideshow {
-    background-color: #CCCCCC;
-	will-change: background-image;
-	background-image: url("../images/hero/hero1.jpeg");
-	transition: background-image 1.3s ease-in-out;
-	transform-style: preserve-3d;
-	-webkit-transform-style: preserve-3d;
-	backface-visibility: hidden;
-	-webkit-backface-visibility: hidden;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	z-index: 1;
+    position: absolute;
 }
 #gradient {
 	will-change: opacity;
@@ -208,19 +128,6 @@ p {
 .history-content {
 	position: absolute;
 	top: 47.5%;
-	left: var(--history-inactive);
-	transform: translate(0, -50%);
-	color: black;
-	font-family: var(--body-text);
-	font-weight: var(--body-weight);
-	font-style: var(--body-style);
-	transition: left 1s;
-	background: rgba(255, 255, 255, 1);
-	width: calc(90% - 30px);
-	padding: 30px;
-	border-radius: 10px;
-	max-width: 300px;
-	box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.7);
 }
 .history-button {
 	display: inline-block;
@@ -300,18 +207,6 @@ p {
 	filter: brightness(1);
 	pointer-events: none;
 	opacity: var(--staffselect-opacity);
-}
-#staff-select li {
-	text-decoration: none;
-	list-style: none;
-	text-align: center;
-	font-family: var(--body-text);
-	font-size: 1.5em;
-	font-style: var(--body-style);
-	padding: 20px;
-	border-bottom: 1px solid gray;
-	color: black;
-	cursor: pointer;
 }
 #staff-info {
 	position: absolute;

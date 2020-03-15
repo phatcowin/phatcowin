@@ -1,5 +1,8 @@
 @charset "UTF-8";
 /* Navbar CSS */
+#nav-mobile-blinds {
+    
+}
 #nav-bar {
 	will-change: top, opacity;
     position: fixed;
@@ -127,5 +130,6 @@
         left: 0;
         z-index: 10;
         opacity: 0;
+        pointer-events: none;
     }
 }
