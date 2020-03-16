@@ -27,6 +27,7 @@ body {
 	filter: brightness(1);
 	pointer-events: none;
 	opacity: var(--staffselect-opacity);
+	transform: translate(-50%, 0);
 }
 #staff-info {
 	position: absolute;
@@ -43,6 +44,7 @@ body {
 	overflow-y: scroll;
 	overflow-x: hidden;
 	pointer-events: none;
+	transform: translate(-50%, 0);
 }
 #staff-info h2 {
 	text-align: center;
@@ -98,3 +100,12 @@ body {
     padding-top: 10px;
     border-radius: 15px 15px 0 0;
 }
+#staff-back {
+	position: absolute;
+	top: calc(100% + 320px);
+	left: var(--staffBack-left-m);
+}
+/*
+	active: calc(100% - 100px);
+	inactive: -100px;
+*/

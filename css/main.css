@@ -30,7 +30,7 @@ nobel
 	--staffinfo-m: -100%;
 	--staffBack-left-d: calc(-55% + 301px);
 	--staffBack-top-m: calc(40% + 250px);
-	--staffBack-left-m: -39%;
+	--staffBack-left-m: -100px;
 	--about-us-opacity: 1;
 	--staffselect-opacity: 1;
 	--history-left-m-active: 50%;
@@ -289,4 +289,25 @@ p {
 	text-align: center;
 	font-family: var(--header);
 	margin-top: 15px;
+}
+#staff-back {
+	position: absolute;
+	z-index: 5;
+	top: calc(25% + 465px);
+	left: var(--staffBack-left-d);
+	transition: left 0.4s, top 0.4s;
+}
+#staff-back button {
+	text-align: center;
+	background-color: var(--pal-red);
+	border-radius: 8px;
+	padding: 15px;
+	border-style: none;
+	font-family: var(--body-text);
+	font-size: 1.3em;
+	color: white;
+	cursor: pointer;
+}
+#staff-back button:focus {
+	outline: none;
 }

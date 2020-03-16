@@ -64,7 +64,7 @@ function showStaffMenu() { // show staff scroller
 	document.getElementById("about-us").style.filter = "brightness(0.85)";
 	document.getElementById("staff-select").style.pointerEvents = "auto";
 	document.documentElement.style.setProperty('--staffBack-left-d', 'calc(10% + 301px)');
-	document.documentElement.style.setProperty('--staffBack-left-m', 'calc(50% + 83px)');			
+	document.documentElement.style.setProperty('--staffBack-left-m', 'calc(100% - 100px)');			
 }
 function hideStaffMenu() {
 	document.documentElement.style.setProperty('--staffselect-d', '-55%');
@@ -73,7 +73,7 @@ function hideStaffMenu() {
 	document.documentElement.style.setProperty('--about-us-opacity', '1');
 	document.getElementById("staff-select").style.pointerEvents = "none";
 	document.documentElement.style.setProperty('--staffBack-left-d', 'calc(-55% + 262px)');
-	document.documentElement.style.setProperty('--staffBack-left-m', '-39%');
+	document.documentElement.style.setProperty('--staffBack-left-m', '-100px');
 }
 function showStaffInfo(staffm) { // show staff-info
 	document.getElementById("about-us").style.filter = "brightness(0.7)";
